@@ -54,7 +54,7 @@ msgstr "Beitragsvideos benötigen ein Beitragsbild um automatisch dargestellt we
 msgid "Auto set"
 msgstr "Automatisch erstellen"
 
-#. #-#-#-#-#  tmp-featured-video-plus.pot (Featured Video Plus 2.2.3) 
+#. #-#-#-#-#  tmp-wp-featured-video.pot (Featured Video Plus 2.2.3) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-help.php:23
@@ -319,8 +319,8 @@ msgid "If you have found a bug or think a specific feature is missing, %slet me 
 msgstr "Wenn du einen Fehler gefunden hast oder eine bestimmte Funktion vermisst, %ssag im Support-Forum Bescheid%s. Dir gefällt das Plugin? %sHinterlasse eine Bewertung%s oder %sspende für die Entwicklung%s!"
 
 #. Plugin URI of the plugin/theme
-msgid "https://buycloud.id/wordpress/featured-video-plus/"
-msgstr "https://buycloud.id/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/wp-featured-video/"
+msgstr "https://buycloud.id/wordpress/wp-featured-video/"
 
 #. Description of the plugin/theme
 msgid "Add Featured Videos to your posts and pages."

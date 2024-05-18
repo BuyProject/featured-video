@@ -27,7 +27,7 @@ msgstr "El tema actual no soporta Imágenes Destacadas"
 msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
 msgstr ""
 
-#. #-#-#-#-#  featured-video-plus.pot (Featured Video Plus 1.9.2)  #-#-#-#-#
+#. #-#-#-#-#  wp-featured-video.pot (Featured Video Plus 1.9.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-backend.php:568 php/class-backend.php:608
 msgid "Featured Video Plus"
@@ -279,7 +279,7 @@ msgstr "Visualizar el video con un ancho y una altura fijos."
 
 #. Plugin URI of the plugin/theme
 #: 
-msgid "https://buycloud.id/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/wp-featured-video/"
 msgstr ""
 
 #. Description of the plugin/theme

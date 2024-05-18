@@ -65,7 +65,7 @@ msgstr ""
 msgid "Auto set"
 msgstr ""
 
-#. #-#-#-#-#  featured-video-plus.pot (Featured Video Plus 2.1.0)  #-#-#-#-#
+#. #-#-#-#-#  wp-featured-video.pot (Featured Video Plus 2.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: build/php/class-help.php:23 php/class-help.php:23
 msgid "Featured Video Plus"
@@ -351,7 +351,7 @@ msgid ""
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://buycloud.id/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/wp-featured-video/"
 msgstr ""
 
 #. Description of the plugin/theme

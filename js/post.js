@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
   'use strict';
   /* global fvpPost, ajaxurl */
 
@@ -52,15 +52,15 @@
 
     $media.css({ backgroundImage: loadingicon }); // Show loading gif.
     $.post(ajaxurl, {
-      'action'    : 'fvp_remove_img',
-      'id'        : $('#post_ID').val(),
-      'fvp_nonce' : $('#fvp_nonce').val()
-    }, function(response) {
+      'action': 'fvp_remove_img',
+      'id': $('#post_ID').val(),
+      'fvp_nonce': $('#fvp_nonce').val()
+    }, function (response) {
       if (response.success) {
         updateImageDiv(response.data);
         $media.css({ backgroundImage: mediaicon }); // Hide loading gif.
       }
-    }, 'json' );
+    }, 'json');
   }
 
 
@@ -76,21 +76,21 @@
 
     // Don't do anything if value didn't change and we are not force-setting
     // the featured image.
-    if (currentUrl === $input.val() && ! setFeatimg) { return; }
+    if (currentUrl === $input.val() && !setFeatimg) { return; }
 
     $media.css({ backgroundImage: loadingicon }); // Show loading gif.
     currentUrl = $input.val(); // Remember new url.
 
     var data = {
-      'action'         : 'fvp_save',
-      'id'             : $('#post_ID').val(),
-      'fvp_nonce'      : $('#fvp_nonce').val(),
-      'fvp_video'      : $input.val(),
+      'action': 'fvp_save',
+      'id': $('#post_ID').val(),
+      'fvp_nonce': $('#fvp_nonce').val(),
+      'fvp_video': $input.val(),
       'fvp_set_featimg': setFeatimg
     };
 
-    $.post(ajaxurl, data, function(response) {
-      if (! response.success) {
+    $.post(ajaxurl, data, function (response) {
+      if (!response.success) {
         return false;
       }
 
@@ -108,7 +108,7 @@
 
       $input.val(data.full);
       currentUrl = data.full; // Remember new url.
-      if(!data.full) {
+      if (!data.full) {
         var height = $container.height();
         if (height) {
           $container.css({ height: height }).animate({ height: 0 });
@@ -123,22 +123,22 @@
 
       // update featured image
       updateImageDiv(data.img);
-    }, 'json' );
+    }, 'json');
   }
 
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     $input = $('.fvp-video');
     $media = $input.siblings('.fvp-video-choose').children('.fvp-media-icon');
-    $invalidNotice = $('#featured-video-plus-box .fvp-notice-invalid');
-    currentUrl  = $input.val();
+    $invalidNotice = $('#wp-featured-video-box .fvp-notice-invalid');
+    currentUrl = $input.val();
     mediaicon = $media.css('backgroundImage');
 
     // Automatically submit the video URL using AJAX when the input is blurred.
     // Update video and featured image with the returned data.
     $input.blur(submitVideo);
 
-    $('#featured-video-plus-box .notice-dismiss').click(function(e) {
+    $('#wp-featured-video-box .notice-dismiss').click(function (e) {
       $input.val('');
       $invalidNotice.hide();
       submitVideo(e);
@@ -150,13 +150,13 @@
     $input
       .autosize()
       .trigger('blur')
-      .keypress(function(event) {
+      .keypress(function (event) {
         if (13 === event.keyCode) { // enter key
           event.preventDefault();
           $(this).trigger('blur');
         }
       })
-      .click(function() {
+      .click(function () {
         $(this).select();
       });
 
@@ -175,7 +175,7 @@
     var mediaControl = {
       // Initializes a new media manager or returns an existing frame.
       // @see wp.media.featuredImage.frame()
-      frame: function() {
+      frame: function () {
         if (this._frame) {
           return this._frame;
         }
@@ -198,23 +198,23 @@
         return this._frame;
       },
 
-      select: function() {
+      select: function () {
         var selection = this.get('selection'),
           returnProperty = 'url';
 
         var target = $control.data('target');
         $(target)
-          .val( selection.pluck( returnProperty ) )
+          .val(selection.pluck(returnProperty))
           .change()
           .trigger('blur');
       },
 
-      updateFrame: function() {
+      updateFrame: function () {
         // Do something when the media frame is opened.
       },
 
-      init: function() {
-        $('#wpbody').on('click', '.fvp-video-choose', function(e) {
+      init: function () {
+        $('#wpbody').on('click', '.fvp-video-choose', function (e) {
           e.preventDefault();
 
           $control = $(this).closest('.fvp-input-wrapper');

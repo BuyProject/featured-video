@@ -1,6 +1,6 @@
 var initFeaturedVideoPlus;
 
-(function($) {
+(function ($) {
   'use strict';
   /* global fvpdata */
 
@@ -15,7 +15,7 @@ var initFeaturedVideoPlus;
    */
   function unwrap() {
     // Remove links around videos.
-    $('.has-post-video a>.featured-video-plus,' +
+    $('.has-post-video a>.wp-featured-video,' +
       '.has-post-video a>.fvp-dynamic,' +
       '.has-post-video a>.fvp-overlay,' +
       '.has-post-video a>.wp-video,' +
@@ -36,7 +36,7 @@ var initFeaturedVideoPlus;
    */
   function fitVids() {
     if (fvpdata.fitvids) {
-      $('.featured-video-plus.fvp-responsive').fitVids({
+      $('.wp-featured-video.fvp-responsive').fitVids({
         customSelector: ['iframe', 'object', 'embed']
       });
     }
@@ -48,12 +48,12 @@ var initFeaturedVideoPlus;
    * videos - overwrite it.
    */
   function sizeLocal() {
-    if (fvpdata.width && ! fvpdata.fitvids) {
-      $('.fvp-local .wp-video').css({width: fvpdata.width, height: 'auto'});
+    if (fvpdata.width && !fvpdata.fitvids) {
+      $('.fvp-local .wp-video').css({ width: fvpdata.width, height: 'auto' });
       var video = $('.fvp-local .wp-video .wp-video-shortcode');
       video.attr({
         width: fvpdata.width,
-        height: (fvpdata.width / video.attr('width') ) * video.attr('heigth')
+        height: (fvpdata.width / video.attr('width')) * video.attr('heigth')
       });
     }
   }
@@ -67,7 +67,7 @@ var initFeaturedVideoPlus;
     var $icon = $elem.children('.fvp-actionicon');
     $icon.css({
       height: $elem.height(),
-      width : $elem.width(),
+      width: $elem.width(),
       margin: $elem.css('margin')
     });
 
@@ -103,10 +103,10 @@ var initFeaturedVideoPlus;
     $icon.addClass('load ' + fvpdata.color);
 
     $.post(fvpdata.ajaxurl, {
-      'action'    : 'fvp_get_embed',
-      'fvp_nonce' : fvpdata.nonce,
-      'id'        : id
-    }, function(response){
+      'action': 'fvp_get_embed',
+      'fvp_nonce': fvpdata.nonce,
+      'id': id
+    }, function (response) {
       if (response.success) {
         var $parent = $self.parent();
         $self.replaceWith(response.data);
@@ -132,22 +132,22 @@ var initFeaturedVideoPlus;
     var id = parseInt($self.attr('data-id'), 10);
 
     $self.openDOMWindow({
-      eventType     : null,
-      windowPadding : 0,
-      borderSize    : 0,
-      windowBGColor : 'transparent',
+      eventType: null,
+      windowPadding: 0,
+      borderSize: 0,
+      windowBGColor: 'transparent',
       overlayOpacity: fvpdata.opacity * 100,
-      width : '100%',
+      width: '100%',
       height: '100%'
     });
 
     // Check if the result is already cached
-    if (! videoCache[id]) {
+    if (!videoCache[id]) {
       $.post(fvpdata.ajaxurl, {
-        'action'    : 'fvp_get_embed',
-        'fvp_nonce' : fvpdata.nonce,
-        'id'        : id
-      }, function(response) {
+        'action': 'fvp_get_embed',
+        'fvp_nonce': fvpdata.nonce,
+        'id': id
+      }, function (response) {
         if (response.success) {
           // cache the result to not reload when opened again
           videoCache[id] = response.data;
@@ -159,7 +159,7 @@ var initFeaturedVideoPlus;
       });
     } else {
       // From cache
-      $('#DOMWindow').html( videoCache[id] );
+      $('#DOMWindow').html(videoCache[id]);
       sizeLocal();
       $(window).trigger('scroll');
     }
@@ -170,7 +170,7 @@ var initFeaturedVideoPlus;
    * Initialize the plugins JS functionality.
    */
   function init() {
-    var newSet = $('.featured-video-plus, .fvp-overlay, .fvp-dynamic');
+    var newSet = $('.wp-featured-video, .fvp-overlay, .fvp-dynamic');
     if (newSet.is(selectorCache)) { return false; }
     selectorCache = newSet;
 
@@ -200,10 +200,10 @@ var initFeaturedVideoPlus;
   /**
    * Debounced version of the init function.
    */
-  initFeaturedVideoPlus = function() {
+  initFeaturedVideoPlus = function () {
     if (0 === initTimeout) {
       init();
-      initTimeout = setTimeout(function() {}, 100);
+      initTimeout = setTimeout(function () { }, 100);
     } else {
       clearTimeout(initTimeout);
       initTimeout = setTimeout(init, 100);
@@ -212,18 +212,18 @@ var initFeaturedVideoPlus;
 
 
   // Initialization after DOM is completly loaded.
-  $(document).ready(function() {
+  $(document).ready(function () {
     // Wordaround for chrome bug
     // See https://code.google.com/p/chromium/issues/detail?id=395791
-    if (!! window.chrome) {
-      $('.featured-video-plus iframe').each(function() {
+    if (!!window.chrome) {
+      $('.wp-featured-video iframe').each(function () {
         this.src = this.src;
       });
     }
 
     // preload images
-    [fvpdata.playicon, fvpdata.loadicon].forEach(function(val) {
-      $('body').append($('<img/>', {src: val, alt: 'preload image'}).hide());
+    [fvpdata.playicon, fvpdata.loadicon].forEach(function (val) {
+      $('body').append($('<img/>', { src: val, alt: 'preload image' }).hide());
     });
   });
 })(jQuery);
