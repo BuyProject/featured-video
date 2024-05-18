@@ -23,7 +23,7 @@ class FVP_Help
 	public function post()
 	{
 		$screen = get_current_screen();
-		$title = esc_html__('Featured Video Plus', 'wp-featured-video');
+		$title = esc_html__('WP Featured Video', 'wp-featured-video');
 		$content = array();
 
 		// Tab Headline
@@ -85,7 +85,7 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 
-		$title = 'Featured Video Plus: ' . esc_html__(
+		$title = 'WP Featured Video: ' . esc_html__(
 			'PHP-Functions',
 			'wp-featured-video'
 		);
@@ -148,7 +148,7 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 		$title = esc_html__(
-			'Featured Video Plus: Shortcode',
+			'WP Featured Video: Shortcode',
 			'wp-featured-video'
 		);
 

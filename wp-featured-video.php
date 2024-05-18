@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Featured Video Plus
+Plugin Name: WP Featured Video
 Plugin URI: https://buycloud.id/wordpress/wp-featured-video/
 Description: Add Featured Videos to your posts and pages.
 Version: 2.3.4

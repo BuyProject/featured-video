@@ -19,4 +19,4 @@ Take a look at your media settings and try using a fixed width instead of respon
 While the plugin tries to handle infinite scrolling automatically, it does not work for all configurations. In those cases you will want to manually call `initFeaturedVideoPlus()` using JavaScript everytime new articles have been loaded. Most infinite scroll plugins should have some kind of post-load hook.
 
 ## Can I help translating the plugin? ##
-Yes, please! Check out the official [Featured Video Plus Translation Project](https://translate.wordpress.org/projects/wp-plugins/wp-featured-video).
+Yes, please! Check out the official [WP Featured Video Translation Project](https://translate.wordpress.org/projects/wp-plugins/wp-featured-video).

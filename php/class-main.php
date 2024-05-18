@@ -127,7 +127,7 @@ class Featured_Video_Plus
 		$classnames['fvp-' . $align] = !empty($align);
 
 		$embed = sprintf(
-			"<!-- Featured Video Plus v%s -->\n<div%s>%s</div>\n\n",
+			"<!-- WP Featured Video v%s -->\n<div%s>%s</div>\n\n",
 			FVP_VERSION,
 			FVP_HTML::class_names($classnames, true, true),
 			$embed

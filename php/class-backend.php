@@ -238,10 +238,10 @@ class FVP_Backend extends Featured_Video_Plus
 			'</p></span>';
 		}
 
-		echo "\n\n\n<!-- Featured Video Plus Metabox -->\n";
+		echo "\n\n\n<!-- WP Featured Video Metabox -->\n";
 		wp_nonce_field(self::get_nonce_action($post_id), 'fvp_nonce');
 		echo $content;
-		echo "\n<!-- Featured Video Plus Metabox End-->\n\n\n";
+		echo "\n<!-- WP Featured Video Metabox End-->\n\n\n";
 	}
 
 
@@ -360,7 +360,7 @@ class FVP_Backend extends Featured_Video_Plus
 		// Do we have a screen capture to pull?
 		if (empty($data['img_url'])) {
 			$data['img_url'] = FVP_URL . 'img/placeholder.png';
-			$data['filename'] = 'Featured Video Plus Placeholder';
+			$data['filename'] = 'WP Featured Video Placeholder';
 		}
 
 		// Should we set the featured image?
@@ -641,7 +641,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 
 	/**
-	 * Add a pointer to the Featured Video Plus box on the post edit screen for
+	 * Add a pointer to the WP Featured Video box on the post edit screen for
 	 * initial explanation.
 	 *
 	 * @param  {array}  $pointers

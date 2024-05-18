@@ -1,4 +1,4 @@
-# Featured Video Plus #
+# WP Featured Video #
 
 Add Featured Videos to your posts and pages. Works like magic with most themes which use Featured Images. Local Media, YouTube, Vimeo and many more.
 
@@ -36,7 +36,7 @@ After installing the plugin check your site's *Media Settings* (`Settings -> Med
 ### Installation ###
 
 1. Visit your WordPress Administration interface and go to `Plugins -> Add New`
-2. Search for `Featured Video Plus`, and click `Install Now` below the plugin's name
+2. Search for `WP Featured Video`, and click `Install Now` below the plugin's name
 3. When the installation finished, click `Activate Plugin`
 
 The plugin is ready to go. Now edit your posts and add video links to the `Featured Video` box on the right! Plugin specific settings can be found under `Settings -> Media`.

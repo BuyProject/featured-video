@@ -556,9 +556,9 @@ class FVP_Settings
 					'If you have found a bug or think a specific feature is missing, %slet me know%s in the support forum. Like this plugin? %sRate it%s or %sbuy me a cookie%s!',
 					'wp-featured-video'
 				),
-				'<a href="https://wordpress.org/support/plugin/wp-featured-video#plugin-title" title="Featured Video Plus Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/plugin/wp-featured-video#plugin-title" title="WP Featured Video Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
-				'<a href="https://wordpress.org/support/view/plugin-reviews/wp-featured-video#plugin-title" title="Rate Featured Video Plus on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/view/plugin-reviews/wp-featured-video#plugin-title" title="Rate WP Featured Video on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
 				'<a href="https://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AD8UKMQW2DMM6" title="Gift to the developer!" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>'

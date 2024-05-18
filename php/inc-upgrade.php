@@ -1,6 +1,6 @@
 <?php
 if ( empty( $version ) || empty( $options ) || empty( $options_org ) ) {
-	exit('Featured Video Plus Error:
+	exit('WP Featured Video Error:
 		Upgrade can not be executed directly!
 		Must be called through FVP_Backend->upgrade().');
 }

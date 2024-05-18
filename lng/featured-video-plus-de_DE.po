@@ -54,12 +54,12 @@ msgstr "Beitragsvideos benötigen ein Beitragsbild um automatisch dargestellt we
 msgid "Auto set"
 msgstr "Automatisch erstellen"
 
-#. #-#-#-#-#  tmp-wp-featured-video.pot (Featured Video Plus 2.2.3) 
+#. #-#-#-#-#  tmp-wp-featured-video.pot (WP Featured Video 2.2.3) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-help.php:23
-msgid "Featured Video Plus"
-msgstr "Featured Video Plus"
+msgid "WP Featured Video"
+msgstr "WP Featured Video"
 
 #: php/class-help.php:31
 msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field."
@@ -99,8 +99,8 @@ msgid "Featured Image"
 msgstr "Beitragsbild"
 
 #: php/class-help.php:143
-msgid "Featured Video Plus: Shortcode"
-msgstr "Featured Video Plus: Shortcode"
+msgid "WP Featured Video: Shortcode"
+msgstr "WP Featured Video: Shortcode"
 
 #: php/class-help.php:156
 msgid "Displays the video in its default size."
