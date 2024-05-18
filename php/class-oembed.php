@@ -338,7 +338,7 @@ class FVP_oEmbed
 			return false;
 		}
 
-		$result = @file_get_contents(sprintf($thumbnail_apis[$provider], $id));
+		$result = @wp_remote_get(sprintf($thumbnail_apis[$provider], $id));
 		if (!empty($result)) {
 			switch ($provider) {
 				case 'dailymotion':

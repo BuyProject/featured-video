@@ -404,7 +404,7 @@ class FVP_Backend extends Featured_Video_Plus
 		$islocal = strpos($video, $local['baseurl']);
 		if (false !== $islocal) {
 			$provider = 'local';
-		} elseif ($video !== strip_tags($video)) {
+		} elseif ($video !== wp_strip_all_tags($video)) {
 			$provider = 'raw';
 		} else {
 			$v = $this->oembed->request($video);
