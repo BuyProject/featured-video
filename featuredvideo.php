@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Featured Video
-Plugin URI: https://buycloud.id/wordpress/featured-video/
+Plugin Name: FeaturedVideo
+Plugin URI: https://buycloud.id/wordpress/featuredvideo/
 Description: Add Featured Videos to your posts and pages.
 Version: 2.3.4
 Author: Ari Sigit
 Author URI: https://buycloud.id
-Text Domain: featured-video
+Text Domain: featuredvideo
 Domain Path: /lng
 License: GPL-2.0
 

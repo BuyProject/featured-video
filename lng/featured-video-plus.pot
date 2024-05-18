@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Featured Video 2.1.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/featured-video-"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/featuredvideo-"
 "plus\n"
 "POT-Creation-Date: 2015-06-11 16:28:03+00:00\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr ""
 msgid "Auto set"
 msgstr ""
 
-#. #-#-#-#-#  featured-video.pot (Featured Video 2.1.0)  #-#-#-#-#
+#. #-#-#-#-#  featuredvideo.pot (Featured Video 2.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: build/php/class-help.php:23 php/class-help.php:23
 msgid "Featured Video"
@@ -351,7 +351,7 @@ msgid ""
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://buycloud.id/wordpress/featured-video/"
+msgid "https://buycloud.id/wordpress/featuredvideo/"
 msgstr ""
 
 #. Description of the plugin/theme

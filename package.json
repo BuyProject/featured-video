@@ -1,17 +1,17 @@
 {
-  "name": "featured-video",
+  "name": "featuredvideo",
   "version": "2.3.4",
   "description": "A WordPress plugin adding featured image like functionality for videos.",
   "homepage": "https://buycloud.id",
-  "main": "featured-video.php",
+  "main": "featuredvideo.php",
   "author": "Ari Sigit",
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BuyProject/featured-video"
+    "url": "https://github.com/BuyProject/featuredvideo"
   },
   "bugs": {
-    "url": "https://github.com/BuyProject/featured-video/issues"
+    "url": "https://github.com/BuyProject/featuredvideo/issues"
   },
   "scripts": {
     "start": "gulp",

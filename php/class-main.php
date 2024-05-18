@@ -21,7 +21,7 @@ class Featured_Video_Plus
 
 		add_action('plugins_loaded', array($this, 'language'));
 
-		add_shortcode('featured-video', array($this, 'shortcode'));
+		add_shortcode('featuredvideo', array($this, 'shortcode'));
 
 		// Mainly frontend stuff, but lives here because it also needs to be
 		// available on the backend because thats where AJAX requests are processed.
@@ -119,7 +119,7 @@ class Featured_Video_Plus
 		}
 
 		$classnames = array(
-			'featured-video' => true,
+			'featuredvideo' => true,
 			'post-thumbnail' => true,
 			'fvp-responsive' => $responsive,
 		);
@@ -261,7 +261,7 @@ class Featured_Video_Plus
 	public function language()
 	{
 		load_plugin_textdomain(
-			'featured-video',
+			'featuredvideo',
 			FVP_DIR . 'lng/',
 			FVP_NAME . '/lng/'
 		);

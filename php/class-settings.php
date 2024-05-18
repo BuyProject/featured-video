@@ -39,7 +39,7 @@ class FVP_Settings
 			sprintf(
 				'<span id="%s">%s</span>',
 				self::$section,
-				esc_html__('Featured Videos', 'featured-video')
+				esc_html__('Featured Videos', 'featuredvideo')
 			),
 			array($this, 'section'),
 			self::$page
@@ -50,7 +50,7 @@ class FVP_Settings
 		if (current_theme_supports('post-thumbnails')) {
 			add_settings_field(
 				'fvp-mode',
-				esc_html__('Display mode', 'featured-video'),
+				esc_html__('Display mode', 'featuredvideo'),
 				array($this, 'mode'),
 				self::$page,
 				self::$section
@@ -58,7 +58,7 @@ class FVP_Settings
 
 			add_settings_field(
 				'fvp-conditions',
-				esc_html__('Display Conditions', 'featured-video'),
+				esc_html__('Display Conditions', 'featuredvideo'),
 				array($this, 'conditions'),
 				self::$page,
 				self::$section
@@ -68,7 +68,7 @@ class FVP_Settings
 		// video sizing options
 		add_settings_field(
 			'fvp-sizing',
-			esc_html__('Video Sizing', 'featured-video'),
+			esc_html__('Video Sizing', 'featuredvideo'),
 			array($this, 'sizing'),
 			self::$page,
 			self::$section
@@ -77,7 +77,7 @@ class FVP_Settings
 		// video align options
 		add_settings_field(
 			'fvp-align',
-			esc_html__('Video Align', 'featured-video'),
+			esc_html__('Video Align', 'featuredvideo'),
 			array($this, 'alignment'),
 			self::$page,
 			self::$section
@@ -86,7 +86,7 @@ class FVP_Settings
 		// video align options
 		add_settings_field(
 			'fvp-legal_html',
-			esc_html__('Legal HTML', 'featured-video'),
+			esc_html__('Legal HTML', 'featuredvideo'),
 			array($this, 'legal_html'),
 			self::$page,
 			self::$section
@@ -95,7 +95,7 @@ class FVP_Settings
 		// video default url argument options
 		add_settings_field(
 			'fvp-defaults',
-			esc_html__('Default Arguments', 'featured-video'),
+			esc_html__('Default Arguments', 'featuredvideo'),
 			array($this, 'arguments'),
 			self::$page,
 			self::$section
@@ -104,7 +104,7 @@ class FVP_Settings
 		// donation and support notice
 		add_settings_field(
 			'fvp-message',
-			esc_html__('Support', 'featured-video'),
+			esc_html__('Support', 'featuredvideo'),
 			array($this, 'message'),
 			self::$page,
 			self::$section
@@ -126,8 +126,8 @@ class FVP_Settings
 		echo FVP_HTML::html(
 			'p',
 			array('class' => 'fvp-settings-section'),
-			sprintf(esc_html__('To display your featured videos you can either make use of the automatic replacement, use the %s or manually edit your theme\'s source files to make use of the plugins PHP-functions.', 'featured-video'), '<code>[featured-video]</code>-Shortcode') .
-				sprintf(esc_html__('For more information about Shortcode and PHP functions see the %sContextual Help%s.', 'featured-video'), '<a href="#contextual-help" class="help-link">', '</a>')
+			sprintf(esc_html__('To display your featured videos you can either make use of the automatic replacement, use the %s or manually edit your theme\'s source files to make use of the plugins PHP-functions.', 'featuredvideo'), '<code>[featuredvideo]</code>-Shortcode') .
+				sprintf(esc_html__('For more information about Shortcode and PHP functions see the %sContextual Help%s.', 'featuredvideo'), '<a href="#contextual-help" class="help-link">', '</a>')
 		);
 
 		if (!current_theme_supports('post-thumbnails')) {
@@ -135,12 +135,12 @@ class FVP_Settings
 				FVP_HTML::html(
 					'span',
 					array('class' => 'bold'),
-					esc_html__('The current theme does not support featured images.', 'featured-video')
+					esc_html__('The current theme does not support featured images.', 'featuredvideo')
 				) .
 					sprintf(
 						esc_html__(
 							'To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s.',
-							'featured-video'
+							'featuredvideo'
 						),
 						'<code>',
 						'</code>'
@@ -163,16 +163,16 @@ class FVP_Settings
 		echo FVP_HTML::radios(
 			'fvp-settings[mode]',
 			array(
-				'replace' => esc_html__('Replace featured image automatically.', 'featured-video'),
-				'dynamic' => esc_html__('Replace featured image on click.', 'featured-video'),
-				'overlay' => esc_html__('Open video overlay when featured image is clicked.', 'featured-video'),
-				'manual'  => esc_html__('Manual: PHP-functions or shortcodes.', 'featured-video'),
+				'replace' => esc_html__('Replace featured image automatically.', 'featuredvideo'),
+				'dynamic' => esc_html__('Replace featured image on click.', 'featuredvideo'),
+				'overlay' => esc_html__('Open video overlay when featured image is clicked.', 'featuredvideo'),
+				'manual'  => esc_html__('Manual: PHP-functions or shortcodes.', 'featuredvideo'),
 			),
 			!empty($options['mode']) ? $options['mode'] : 'replace'
 		);
 
 		echo FVP_HTML::description(
-			sprintf(esc_html__("Automatic integration (options 1-3) requires your theme to make use of WordPress' native %sfeatured image%s functionality.", 'featured-video'), '<a href="https://codex.wordpress.org/Post_Thumbnails" target="_blank" rel="noopener noreferrer">', '</a>')
+			sprintf(esc_html__("Automatic integration (options 1-3) requires your theme to make use of WordPress' native %sfeatured image%s functionality.", 'featuredvideo'), '<a href="https://codex.wordpress.org/Post_Thumbnails" target="_blank" rel="noopener noreferrer">', '</a>')
 		);
 
 		// Always replace on is_singular() ?
@@ -183,7 +183,7 @@ class FVP_Settings
 					sprintf(
 						esc_html__(
 							'Always use replace mode when viewing %ssingle%s posts and pages.',
-							'featured-video'
+							'featuredvideo'
 						),
 						'<a href="https://codex.wordpress.org/Function_Reference/is_singular" target="_blank" rel="noopener noreferrer">',
 						'</a>'
@@ -211,12 +211,12 @@ class FVP_Settings
 		$auto = !empty($options['mode']) && 'manual' !== $options['mode'];
 		$or = sprintf(
 			'<em>%s</em>',
-			strtoupper(esc_html__('or', 'featured-video'))
+			strtoupper(esc_html__('or', 'featuredvideo'))
 		);
 
 		echo FVP_HTML::conditional(
 			FVP_HTML::description(
-				esc_html__('View options are not available in manual mode.', 'featured-video')
+				esc_html__('View options are not available in manual mode.', 'featuredvideo')
 			),
 			array(
 				'fvp-settings[mode]' => 'manual',
@@ -226,36 +226,36 @@ class FVP_Settings
 
 		echo FVP_HTML::conditional(
 			FVP_HTML::description(
-				esc_html__('Apply display mode...', 'featured-video')
+				esc_html__('Apply display mode...', 'featuredvideo')
 			) .
 				FVP_HTML::checkboxes(
 					'fvp-settings[conditions]',
 					array(
 						'single' => sprintf(
-							esc_html__('when viewing %ssingle%s posts and pages %s', 'featured-video'),
+							esc_html__('when viewing %ssingle%s posts and pages %s', 'featuredvideo'),
 							'<a href="https://codex.wordpress.org/Function_Reference/is_singular" target="_blank" rel="noopener noreferrer">',
 							'</a>',
 							$or
 						),
 						'home' => sprintf(
-							esc_html__('when on the %spost index page%s %s', 'featured-video'),
+							esc_html__('when on the %spost index page%s %s', 'featuredvideo'),
 							'<a href="https://codex.wordpress.org/Function_Reference/is_home" target="_blank" rel="noopener noreferrer">',
 							'</a>',
 							$or
 						),
 						'main_query' => sprintf(
-							esc_html__('when inside the %smain query%s of each page %s', 'featured-video'),
+							esc_html__('when inside the %smain query%s of each page %s', 'featuredvideo'),
 							'<a href="https://developer.wordpress.org/reference/functions/is_main_query/" target="_blank" rel="noopener noreferrer">',
 							'</a>',
 							$or
 						),
 						'sticky' => sprintf(
-							esc_html__('when displaying %ssticky%s posts.', 'featured-video'),
+							esc_html__('when displaying %ssticky%s posts.', 'featuredvideo'),
 							'<a href="https://codex.wordpress.org/Function_Reference/is_sticky" target="_blank" rel="noopener noreferrer">',
 							'</a>'
 						),
 						'!sticky' => sprintf(
-							esc_html__('when displaying not %ssticky%s posts.', 'featured-video'),
+							esc_html__('when displaying not %ssticky%s posts.', 'featuredvideo'),
 							'<a href="https://codex.wordpress.org/Function_Reference/is_sticky" target="_blank" rel="noopener noreferrer">',
 							'</a>'
 						)
@@ -264,7 +264,7 @@ class FVP_Settings
 				) .
 				FVP_HTML::description(esc_html__(
 					'If none of the above options is selected the display mode will be applied whenever possible.',
-					'featured-video'
+					'featuredvideo'
 				)),
 			array(
 				'fvp-settings[mode]' => '!manual',
@@ -288,14 +288,14 @@ class FVP_Settings
 
 		echo FVP_HTML::checkbox(
 			'fvp-settings[sizing][responsive]',
-			esc_html__('Responsive', 'featured-video'),
+			esc_html__('Responsive', 'featuredvideo'),
 			'1',
 			$responsive
 		);
 
 		echo FVP_HTML::conditional(
 			FVP_HTML::labeled_input(
-				esc_html__('Width in pixels:', 'featured-video'),
+				esc_html__('Width in pixels:', 'featuredvideo'),
 				'fvp-settings[sizing][width]',
 				array(
 					'type' => 'number',
@@ -312,7 +312,7 @@ class FVP_Settings
 
 		echo FVP_HTML::description(
 			sprintf(
-				esc_html__('The %1$sresponsive%2$s setting does not work when using the %1$soverlay%2$s display mode and might break completly in some themes - in such cases you should use a fixed width instead.', 'featured-video'),
+				esc_html__('The %1$sresponsive%2$s setting does not work when using the %1$soverlay%2$s display mode and might break completly in some themes - in such cases you should use a fixed width instead.', 'featuredvideo'),
 				'<code>',
 				'</code>'
 			),
@@ -334,9 +334,9 @@ class FVP_Settings
 		echo FVP_HTML::radios(
 			'fvp-settings[alignment]',
 			array(
-				'left'   => esc_html__('left', 'featured-video'),
-				'center' => esc_html__('center', 'featured-video'),
-				'right'  => esc_html__('right', 'featured-video'),
+				'left'   => esc_html__('left', 'featuredvideo'),
+				'center' => esc_html__('center', 'featuredvideo'),
+				'right'  => esc_html__('right', 'featuredvideo'),
 			),
 			!empty($options['alignment']) ? $options['alignment'] : 'center'
 		);
@@ -356,7 +356,7 @@ class FVP_Settings
 			sprintf(
 				esc_html__(
 					'By default the video input only accepts %soEmbed urls%s. If you want to insert raw embed codes you need to enable the unsecure HTML here first.',
-					'featured-video'
+					'featuredvideo'
 				),
 				'<a href="https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F" target="_blank" rel="noopener noreferrer">',
 				'</a>'
@@ -395,30 +395,30 @@ class FVP_Settings
 				FVP_HTML::description(
 					esc_html__(
 						'Not all of the following options might be supported by all providers.',
-						'featured-video'
+						'featuredvideo'
 					)
 				),
 				FVP_HTML::checkboxes(
 					'fvp-settings[default_args][general]',
 					array(
-						'loop'     => esc_html__('Loop', 'featured-video'),
+						'loop'     => esc_html__('Loop', 'featuredvideo'),
 					),
 					!empty($args['general']) ? $args['general'] : array()
 				),
 				FVP_HTML::radios(
 					'fvp-settings[autoplay][always]',
 					array(
-						'1' => esc_html__('Always autoplay.', 'featured-video'),
-						'0' => esc_html__('Autoplay when...', 'featured-video'),
+						'1' => esc_html__('Always autoplay.', 'featuredvideo'),
+						'0' => esc_html__('Autoplay when...', 'featuredvideo'),
 					),
 					!empty($autoplay['always']) ? $autoplay['always'] : '0'
 				),
 				FVP_HTML::checkboxes(
 					'fvp-settings[autoplay]',
 					array(
-						'lazy' => esc_html__('... lazy loading videos.', 'featured-video'),
+						'lazy' => esc_html__('... lazy loading videos.', 'featuredvideo'),
 						'single' => sprintf(
-							esc_html__('... viewing %ssingle%s posts and pages.', 'featured-video'),
+							esc_html__('... viewing %ssingle%s posts and pages.', 'featuredvideo'),
 							'<a href="https://codex.wordpress.org/Function_Reference/is_singular" target="_blank" rel="noopener noreferrer">',
 							'</a>'
 						),
@@ -431,7 +431,7 @@ class FVP_Settings
 				FVP_HTML::description(
 					esc_html__(
 						'If the owner of a video is a Plus member, some of these settings may be overridden by their preferences.',
-						'featured-video'
+						'featuredvideo'
 					)
 				),
 				FVP_HTML::colorpicker(
@@ -444,15 +444,15 @@ class FVP_Settings
 					array(
 						'portrait' => array(
 							'value' => '0',
-							'label' => esc_html__("Hide user's portrait", 'featured-video')
+							'label' => esc_html__("Hide user's portrait", 'featuredvideo')
 						),
 						'title' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide video title', 'featured-video')
+							'label' => esc_html__('Hide video title', 'featuredvideo')
 						),
 						'byline' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide video byline', 'featured-video')
+							'label' => esc_html__('Hide video byline', 'featuredvideo')
 						),
 					),
 					$vimeo
@@ -465,30 +465,30 @@ class FVP_Settings
 					array(
 						'theme' => array(
 							'value' => 'light',
-							'label' => esc_html__('Light theme', 'featured-video')
+							'label' => esc_html__('Light theme', 'featuredvideo')
 						),
 						'color' => array(
 							'value' => 'white',
-							'label' => esc_html__('White highlight color', 'featured-video')
+							'label' => esc_html__('White highlight color', 'featuredvideo')
 						),
-						'modestbranding' => esc_html__('Hide YouTube logo', 'featured-video'),
+						'modestbranding' => esc_html__('Hide YouTube logo', 'featuredvideo'),
 						'iv_load_policy' => array(
 							'value' => '3',
-							'label' => esc_html__('Hide annotations', 'featured-video')
+							'label' => esc_html__('Hide annotations', 'featuredvideo')
 						),
 						'rel' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide related videos', 'featured-video')
+							'label' => esc_html__('Hide related videos', 'featuredvideo')
 						),
 						'fs' => array(
 							'value' => '0',
-							'label' => esc_html__('Disallow fullscreen', 'featured-video')
+							'label' => esc_html__('Disallow fullscreen', 'featuredvideo')
 						),
 						'showinfo' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide video info', 'featured-video')
+							'label' => esc_html__('Hide video info', 'featuredvideo')
 						),
-						'enablejsapi' => esc_html__('Enable JavaScript API', 'featured-video'),
+						'enablejsapi' => esc_html__('Enable JavaScript API', 'featuredvideo'),
 					),
 					$youtube
 				),
@@ -520,19 +520,19 @@ class FVP_Settings
 					array(
 						'logo' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide DailyMotion logo', 'featured-video')
+							'label' => esc_html__('Hide DailyMotion logo', 'featuredvideo')
 						),
 						'info' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide video info', 'featured-video')
+							'label' => esc_html__('Hide video info', 'featuredvideo')
 						),
 						'related' => array(
 							'value' => '0',
-							'label' => esc_html__('Hide related videos', 'featured-video')
+							'label' => esc_html__('Hide related videos', 'featuredvideo')
 						),
 						'quality' => array(
 							'value' => 1080,
-							'label' => esc_html__('Turn HD on by default', 'featured-video')
+							'label' => esc_html__('Turn HD on by default', 'featuredvideo')
 						),
 					),
 					$dailymotion
@@ -554,11 +554,11 @@ class FVP_Settings
 			sprintf(
 				esc_html__(
 					'If you have found a bug or think a specific feature is missing, %slet me know%s in the support forum. Like this plugin? %sRate it%s or %sbuy me a cookie%s!',
-					'featured-video'
+					'featuredvideo'
 				),
-				'<a href="https://wordpress.org/support/plugin/featured-video#plugin-title" title="Featured Video Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/plugin/featuredvideo#plugin-title" title="Featured Video Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
-				'<a href="https://wordpress.org/support/view/plugin-reviews/featured-video#plugin-title" title="Rate Featured Video on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/view/plugin-reviews/featuredvideo#plugin-title" title="Rate Featured Video on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
 				'<a href="https://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AD8UKMQW2DMM6" title="Gift to the developer!" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>'

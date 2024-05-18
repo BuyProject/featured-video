@@ -12,22 +12,22 @@ Featured Videos work like Featured Images, just smoother: Paste a video URL into
 There are three ways to get the videos onto your page:
 
 1. **Automagically!** If your theme makes use of WordPress' native [featured image functionality](http://codex.wordpress.org/Post_Thumbnails) you are set: Automatic insertion, lazy loading or lightbox overlays, its your choice. If this does not work you can either
-2. insert the `[featured-video]`-__Shortcode__ in your posts or
+2. insert the `[featuredvideo]`-__Shortcode__ in your posts or
 3. manually make use of the __PHP-functions__ in your theme's source files.
 
-For more details, check the [installation](http://wordpress.org/plugins/featured-video/installation/) page.
+For more details, check the [installation](http://wordpress.org/plugins/featuredvideo/installation/) page.
 
 > <strong>Theme compatibility</strong><br>
-> Sadly many themes do not follow the WordPress standards and implement their own fancy functions for displaying featured images - those very likely break this plugin. Check out the [FAQ](https://wordpress.org/plugins/featured-video/faq/). Another common problem are sliders: Videos, in general, do not like sliders at all.
+> Sadly many themes do not follow the WordPress standards and implement their own fancy functions for displaying featured images - those very likely break this plugin. Check out the [FAQ](https://wordpress.org/plugins/featuredvideo/faq/). Another common problem are sliders: Videos, in general, do not like sliders at all.
 
-See the plugin in action on [buycloud.id](https://buycloud.id/wordpress/featured-video/). There is a button in the sidebar to switch between the different featured video display modes: [Automatic](https://buycloud.id/wordpress/featured-video/?setfvpmode=replace), [lazy](https://buycloud.id/wordpress/featured-video/?setfvpmode=dynamic) and [overlay](https://buycloud.id/wordpress/featured-video/?setfvpmode=overlay).
+See the plugin in action on [buycloud.id](https://buycloud.id/wordpress/featuredvideo/). There is a button in the sidebar to switch between the different featured video display modes: [Automatic](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=replace), [lazy](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=dynamic) and [overlay](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=overlay).
 
 Besides **Local Videos** you can use videos from a whole lot of external providers like **YouTube**, **Vimeo** and **Dailymotion**. **SoundCloud** and **Spotify** (including playlists) are supported as well. Check the [WordPress Codex](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) for a complete list. If some provider is not listed you can always just use an embed code or whatever HTML you like.
 
 After installing the plugin check your site's *Media Settings* (`Settings -> Media` in the administration interface): The plugin adds quite some little helper options there. Change to lazy or overlay mode, tweak video sizing, individualize the look of the most prominent providers' video players and turn on autoplay or video looping. By default videos try to dynamically fit their parent containers width and adjust their size responsively.
 
 > <strong>Support</strong><br>
-> I do read all support questions in the [forums](http://wordpress.org/support/plugin/featured-video) but cannot reply to all of them. The plugin is an unpaid side project and full support would require more time than I can invest for free for over 20k active installs. If you really need help, consider [buying me a cookie](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AD8UKMQW2DMM6) - best way to attract my attention and to support future enhancements.
+> I do read all support questions in the [forums](http://wordpress.org/support/plugin/featuredvideo) but cannot reply to all of them. The plugin is an unpaid side project and full support would require more time than I can invest for free for over 20k active installs. If you really need help, consider [buying me a cookie](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AD8UKMQW2DMM6) - best way to attract my attention and to support future enhancements.
 
 
 
@@ -47,8 +47,8 @@ If the automatic integration fails you can always fallback to either using the s
 
 **Shortcode**
 
-	[featured-video]
-	[featured-video width=300]
+	[featuredvideo]
+	[featuredvideo width=300]
 
 **PHP-functions**
 
