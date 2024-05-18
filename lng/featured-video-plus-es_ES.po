@@ -279,7 +279,7 @@ msgstr "Visualizar el video con un ancho y una altura fijos."
 
 #. Plugin URI of the plugin/theme
 #: 
-msgid "http://yrnxt.com/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/featured-video-plus/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -294,6 +294,6 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 #: 
-msgid "http://yrnxt.com"
+msgid "https://buycloud.id"
 msgstr ""
 

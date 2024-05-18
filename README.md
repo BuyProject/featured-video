@@ -20,7 +20,7 @@ For more details, check the [installation](http://wordpress.org/plugins/featured
 > <strong>Theme compatibility</strong><br>
 > Sadly many themes do not follow the WordPress standards and implement their own fancy functions for displaying featured images - those very likely break this plugin. Check out the [FAQ](https://wordpress.org/plugins/featured-video-plus/faq/). Another common problem are sliders: Videos, in general, do not like sliders at all.
 
-See the plugin in action on [yrnxt.com](http://yrnxt.com/wordpress/featured-video-plus/). There is a button in the sidebar to switch between the different featured video display modes: [Automatic](http://yrnxt.com/wordpress/featured-video-plus/?setfvpmode=replace), [lazy](http://yrnxt.com/wordpress/featured-video-plus/?setfvpmode=dynamic) and [overlay](http://yrnxt.com/wordpress/featured-video-plus/?setfvpmode=overlay).
+See the plugin in action on [buycloud.id](https://buycloud.id/wordpress/featured-video-plus/). There is a button in the sidebar to switch between the different featured video display modes: [Automatic](https://buycloud.id/wordpress/featured-video-plus/?setfvpmode=replace), [lazy](https://buycloud.id/wordpress/featured-video-plus/?setfvpmode=dynamic) and [overlay](https://buycloud.id/wordpress/featured-video-plus/?setfvpmode=overlay).
 
 Besides **Local Videos** you can use videos from a whole lot of external providers like **YouTube**, **Vimeo** and **Dailymotion**. **SoundCloud** and **Spotify** (including playlists) are supported as well. Check the [WordPress Codex](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) for a complete list. If some provider is not listed you can always just use an embed code or whatever HTML you like.
 

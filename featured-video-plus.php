@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Featured Video Plus
-Plugin URI: http://yrnxt.com/wordpress/featured-video-plus/
+Plugin URI: https://buycloud.id/wordpress/featured-video-plus/
 Description: Add Featured Videos to your posts and pages.
-Version: 2.3.3
-Author: Alexander Höreth
-Author URI: http://yrnxt.com
+Version: 2.3.4
+Author: Ari Sigit
+Author URI: https://buycloud.id
 Text Domain: featured-video-plus
 Domain Path: /lng
 License: GPL-2.0
@@ -31,48 +31,48 @@ License: GPL-2.0
 
 // ********************
 // CONSTANTS
-if ( ! defined( 'FVP_VERSION' ) ) {
-	define( 'FVP_VERSION', '2.3.3' );
+if (!defined('FVP_VERSION')) {
+	define('FVP_VERSION', '2.3.4');
 }
 
-$pathinfo = pathinfo( dirname( plugin_basename( __FILE__ ) ) );
-if ( ! defined( 'FVP_NAME' ) ) {
-	define( 'FVP_NAME', $pathinfo['filename'] );
+$pathinfo = pathinfo(dirname(plugin_basename(__FILE__)));
+if (!defined('FVP_NAME')) {
+	define('FVP_NAME', $pathinfo['filename']);
 }
 
-if ( ! defined( 'FVP_DIR' ) ) {
-	define( 'FVP_DIR', plugin_dir_path( __FILE__ ) );
+if (!defined('FVP_DIR')) {
+	define('FVP_DIR', plugin_dir_path(__FILE__));
 }
 
-if ( ! defined( 'FVP_URL' ) ) {
-	define( 'FVP_URL', plugins_url( FVP_NAME ) . '/' );
+if (!defined('FVP_URL')) {
+	define('FVP_URL', plugins_url(FVP_NAME) . '/');
 }
 
 
 // ********************
 // BACKEND
-if ( is_admin() ) {
-	require_once( FVP_DIR . 'php/class-backend.php' );
+if (is_admin()) {
+	require_once(FVP_DIR . 'php/class-backend.php');
 	$featured_video_plus = new FVP_Backend();
 
 	// SETTINGS
-	require_once( FVP_DIR . 'php/class-settings.php' );
+	require_once(FVP_DIR . 'php/class-settings.php');
 	new FVP_Settings();
 
 	// HELP TABS
-	require_once( FVP_DIR . 'php/class-help.php' );
+	require_once(FVP_DIR . 'php/class-help.php');
 	new FVP_Help();
 }
 
 
 // ********************
 // FRONTEND
-if ( ! is_admin() ) {
-	require_once( FVP_DIR . 'php/class-frontend.php' );
+if (!is_admin()) {
+	require_once(FVP_DIR . 'php/class-frontend.php');
 	$featured_video_plus = new FVP_Frontend();
 }
 
 
 // ********************
 // PUBLIC API
-include_once( FVP_DIR . 'php/functions.php' );
+include_once(FVP_DIR . 'php/functions.php');

@@ -351,7 +351,7 @@ msgid ""
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://yrnxt.com/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/featured-video-plus/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -363,5 +363,5 @@ msgid "Alexander Höreth"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://yrnxt.com"
+msgid "https://buycloud.id"
 msgstr ""

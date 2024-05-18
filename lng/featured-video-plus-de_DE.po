@@ -319,8 +319,8 @@ msgid "If you have found a bug or think a specific feature is missing, %slet me 
 msgstr "Wenn du einen Fehler gefunden hast oder eine bestimmte Funktion vermisst, %ssag im Support-Forum Bescheid%s. Dir gefällt das Plugin? %sHinterlasse eine Bewertung%s oder %sspende für die Entwicklung%s!"
 
 #. Plugin URI of the plugin/theme
-msgid "http://yrnxt.com/wordpress/featured-video-plus/"
-msgstr "http://yrnxt.com/wordpress/featured-video-plus/"
+msgid "https://buycloud.id/wordpress/featured-video-plus/"
+msgstr "https://buycloud.id/wordpress/featured-video-plus/"
 
 #. Description of the plugin/theme
 msgid "Add Featured Videos to your posts and pages."
@@ -331,5 +331,5 @@ msgid "Alexander Höreth"
 msgstr "Alexander Höreth"
 
 #. Author URI of the plugin/theme
-msgid "http://yrnxt.com"
-msgstr "http://yrnxt.com"
+msgid "https://buycloud.id"
+msgstr "https://buycloud.id"
