@@ -31,7 +31,7 @@ class Featured_Video_Plus
 
 
 	/**
-	 * Returns the featured video html, ready to echo.
+	 * Returns the FeaturedVideo html, ready to echo.
 	 *
 	 * @since 1.0.0
 	 *
@@ -127,7 +127,7 @@ class Featured_Video_Plus
 		$classnames['fvp-' . $align] = !empty($align);
 
 		$embed = sprintf(
-			"<!-- Featured Video v%s -->\n<div%s>%s</div>\n\n",
+			"<!-- FeaturedVideo v%s -->\n<div%s>%s</div>\n\n",
 			FVP_VERSION,
 			FVP_HTML::class_names($classnames, true, true),
 			$embed
@@ -138,7 +138,7 @@ class Featured_Video_Plus
 
 
 	/**
-	 * Shortcode for usage in post or page entries. Echos the post's featured video.
+	 * Shortcode for usage in post or page entries. Echos the post's FeaturedVideo.
 	 *
 	 * @since 1.0.0
 	 *
@@ -157,7 +157,7 @@ class Featured_Video_Plus
 
 	/**
 	 * Filter the post thumbnail to eventually replace it with the
-	 * featured video.
+	 * FeaturedVideo.
 	 *
 	 * @see http://wordpress.stackexchange.com/a/41858
 	 * @since 1.0.0
@@ -198,7 +198,7 @@ class Featured_Video_Plus
 		// over AJAX.
 		$onload = '<img class="fvp-onload" ' .
 			'src="' . FVP_URL . 'img/playicon.png" ' .
-			'alt="Featured Video Play Icon" ' .
+			'alt="FeaturedVideo Play Icon" ' .
 			'onload="(function() {' .
 			"('initFeaturedVideoPlus' in this) && " .
 			"('function' === typeof initFeaturedVideoPlus) && " .
@@ -269,7 +269,7 @@ class Featured_Video_Plus
 
 
 	/**
-	 * Determine featured video size
+	 * Determine FeaturedVideo size
 	 *
 	 * @since  1.4.0
 	 *

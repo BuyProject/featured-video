@@ -7,7 +7,7 @@
 function featured_video_plus_uninstall() {
 	global $wpdb;
 
-	// Get posts with featured videos.
+	// Get posts with FeaturedVideos.
 	$ids = $wpdb->get_col( $wpdb->prepare(
 		"SELECT post_id FROM {$wpdb->postmeta} WHERE meta_key=%s",
 		'_fvp_video'

@@ -1,8 +1,8 @@
-# Copyright (C) 2015 Featured Video
-# This file is distributed under the same license as the Featured Video package.
+# Copyright (C) 2015 FeaturedVideo
+# This file is distributed under the same license as the FeaturedVideo package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Featured Video 2.1.0\n"
+"Project-Id-Version: FeaturedVideo 2.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/featuredvideo-"
 "plus\n"
 "POT-Creation-Date: 2015-06-11 16:28:03+00:00\n"
@@ -14,11 +14,11 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
 #: build/php/class-backend.php:122 php/class-backend.php:122
-msgid "Featured Video"
+msgid "FeaturedVideo"
 msgstr ""
 
 #: build/php/class-backend.php:164 php/class-backend.php:164
-msgid "Set Featured Video"
+msgid "Set FeaturedVideo"
 msgstr ""
 
 #: build/php/class-backend.php:170 php/class-backend.php:170
@@ -31,14 +31,14 @@ msgstr ""
 
 #: build/php/class-backend.php:205 php/class-backend.php:205
 msgid ""
-"To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP "
+"To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP "
 "functions%2$s. To hide this notice deactivate %3$sReplace Featured Images"
 "%4$s in the %5$sMedia Settings%6$s."
 msgstr ""
 
 #: build/php/class-backend.php:603 build/php/class-settings.php:39
 #: php/class-backend.php:603 php/class-settings.php:39
-msgid "Featured Videos"
+msgid "FeaturedVideos"
 msgstr ""
 
 #: build/php/class-backend.php:605 php/class-backend.php:605
@@ -49,7 +49,7 @@ msgstr ""
 
 #: build/php/class-backend.php:612 php/class-backend.php:612
 msgid ""
-"To adjust how featured videos are displayed on the frontend checkout the "
+"To adjust how FeaturedVideos are displayed on the frontend checkout the "
 "%smedia settings%s."
 msgstr ""
 
@@ -58,23 +58,23 @@ msgid "Remove featured image"
 msgstr ""
 
 #: build/php/class-backend.php:669 php/class-backend.php:669
-msgid "Featured Videos require a Featured Image for automatic replacement."
+msgid "FeaturedVideos require a Featured Image for automatic replacement."
 msgstr ""
 
 #: build/php/class-backend.php:673 php/class-backend.php:673
 msgid "Auto set"
 msgstr ""
 
-#. #-#-#-#-#  featuredvideo.pot (Featured Video 2.1.0)  #-#-#-#-#
+#. #-#-#-#-#  featuredvideo.pot (FeaturedVideo 2.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: build/php/class-help.php:23 php/class-help.php:23
-msgid "Featured Video"
+msgid "FeaturedVideo"
 msgstr ""
 
 #: build/php/class-help.php:31 php/class-help.php:31
 msgid ""
 "Take a video url from one of the %ssupported oembed providers%s and paste it "
-"into the Featured Video input field."
+"into the FeaturedVideo input field."
 msgstr ""
 
 #: build/php/class-help.php:41 php/class-help.php:41
@@ -124,7 +124,7 @@ msgid "Featured Image"
 msgstr ""
 
 #: build/php/class-help.php:143 php/class-help.php:143
-msgid "Featured Video: Shortcode"
+msgid "FeaturedVideo: Shortcode"
 msgstr ""
 
 #: build/php/class-help.php:156 php/class-help.php:156
@@ -167,7 +167,7 @@ msgstr ""
 
 #: build/php/class-settings.php:116 php/class-settings.php:116
 msgid ""
-"To display your featured videos you can either make use of the automatic "
+"To display your FeaturedVideos you can either make use of the automatic "
 "replacement, use the %s or manually edit your theme's source files to make "
 "use of the plugins PHP-functions."
 msgstr ""
@@ -184,7 +184,7 @@ msgstr ""
 
 #: build/php/class-settings.php:128 php/class-settings.php:128
 msgid ""
-"To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP "
+"To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP "
 "functions%2$s."
 msgstr ""
 
@@ -355,7 +355,7 @@ msgid "https://buycloud.id/wordpress/featuredvideo/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Add Featured Videos to your posts and pages."
+msgid "Add FeaturedVideos to your posts and pages."
 msgstr ""
 
 #. Author of the plugin/theme

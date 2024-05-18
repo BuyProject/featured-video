@@ -23,7 +23,7 @@ class FVP_Help
 	public function post()
 	{
 		$screen = get_current_screen();
-		$title = esc_html__('Featured Video', 'featuredvideo');
+		$title = esc_html__('FeaturedVideo', 'featuredvideo');
 		$content = array();
 
 		// Tab Headline
@@ -32,7 +32,7 @@ class FVP_Help
 		// oEmbed
 		$content[] = FVP_HTML::html('p', sprintf(
 			esc_html__(
-				'Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field.',
+				'Take a video url from one of the %ssupported oembed providers%s and paste it into the FeaturedVideo input field.',
 				'featuredvideo'
 			),
 			'<a href="https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F" target="_blank" rel="noopener noreferrer">',
@@ -85,7 +85,7 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 
-		$title = 'Featured Video: ' . esc_html__(
+		$title = 'FeaturedVideo: ' . esc_html__(
 			'PHP-Functions',
 			'featuredvideo'
 		);
@@ -148,7 +148,7 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 		$title = esc_html__(
-			'Featured Video: Shortcode',
+			'FeaturedVideo: Shortcode',
 			'featuredvideo'
 		);
 

@@ -11,11 +11,11 @@ msgstr ""
 "Project-Id-Version: Development (trunk)\n"
 
 #: php/class-backend.php:122
-msgid "Featured Video"
+msgid "FeaturedVideo"
 msgstr "Beitragsvideo"
 
 #: php/class-backend.php:164
-msgid "Set Featured Video"
+msgid "Set FeaturedVideo"
 msgstr "Beitragsvideo festlegen"
 
 #: php/class-backend.php:170
@@ -27,11 +27,11 @@ msgid "The current theme does not support Featured Images"
 msgstr "Das aktuelle Theme nutzt keine Beitragsbilder."
 
 #: php/class-backend.php:205
-msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
+msgid "To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
 msgstr "Um Beitragsvideos darzustellen musst du den %1$sShortcode%2§s oder %1$sPHP-Funktionen%2$s nutzen. Um diese Warnung zu deaktivieren stell %3$sBeitragsbilder ersetzen%4$s in den %5$sMedieneinstellungen%6$s aus."
 
 #: php/class-backend.php:628 php/class-settings.php:39
-msgid "Featured Videos"
+msgid "FeaturedVideos"
 msgstr "Beitragsvideos"
 
 #: php/class-backend.php:630
@@ -39,7 +39,7 @@ msgid "Simply paste a URL into this input to add a bit extra life to your posts.
 msgstr "Kopier einfach eine URL in das Eingabefeld um deinen Videos ein wenig extra Leben einzuhauchen. %sProbier ein Beispiel%s."
 
 #: php/class-backend.php:637
-msgid "To adjust how featured videos are displayed on the frontend checkout the %smedia settings%s."
+msgid "To adjust how FeaturedVideos are displayed on the frontend checkout the %smedia settings%s."
 msgstr "Wirf einen Blick in die %sMedien-Einstellungen%s um anzupassen wie Beitragsvideos dargestellt werden."
 
 #: php/class-backend.php:693
@@ -47,22 +47,22 @@ msgid "Remove featured image"
 msgstr "Beitragsbild entfernen"
 
 #: php/class-backend.php:700
-msgid "Featured Videos require a Featured Image for automatic replacement."
+msgid "FeaturedVideos require a Featured Image for automatic replacement."
 msgstr "Beitragsvideos benötigen ein Beitragsbild um automatisch dargestellt werden zu können."
 
 #: php/class-backend.php:704
 msgid "Auto set"
 msgstr "Automatisch erstellen"
 
-#. #-#-#-#-#  tmp-featuredvideo.pot (Featured Video 2.2.3) 
+#. #-#-#-#-#  tmp-featuredvideo.pot (FeaturedVideo 2.2.3) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-help.php:23
-msgid "Featured Video"
-msgstr "Featured Video"
+msgid "FeaturedVideo"
+msgstr "FeaturedVideo"
 
 #: php/class-help.php:31
-msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field."
+msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the FeaturedVideo input field."
 msgstr "Kopiere einen Video-Link von einem der %sunterstützten Anbieter%s in das Beitragsvideo-Eingabefeld."
 
 #: php/class-help.php:41
@@ -99,8 +99,8 @@ msgid "Featured Image"
 msgstr "Beitragsbild"
 
 #: php/class-help.php:143
-msgid "Featured Video: Shortcode"
-msgstr "Featured Video: Shortcode"
+msgid "FeaturedVideo: Shortcode"
+msgstr "FeaturedVideo: Shortcode"
 
 #: php/class-help.php:156
 msgid "Displays the video in its default size."
@@ -139,7 +139,7 @@ msgid "Support"
 msgstr "Support"
 
 #: php/class-settings.php:116
-msgid "To display your featured videos you can either make use of the automatic replacement, use the %s or manually edit your theme's source files to make use of the plugins PHP-functions."
+msgid "To display your FeaturedVideos you can either make use of the automatic replacement, use the %s or manually edit your theme's source files to make use of the plugins PHP-functions."
 msgstr "Um die Artikelvideos anzuzeigen kannst du entweder das automatische Ersetzen der Artikelbilder nutzen, auf den %s zurückgreifen oder manuel die PHP-Funktionen in deine Theme Dateien integrieren."
 
 #: php/class-settings.php:117
@@ -151,7 +151,7 @@ msgid "The current theme does not support featured images."
 msgstr "Das aktuelle Theme unterstützt keine Beitragsbilder."
 
 #: php/class-settings.php:128
-msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s."
+msgid "To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s."
 msgstr "Um Beitragsvideos darzustellen musst du leider den %1$sShortcode%2$s oder die %1$sPHP-Funktionen%2$s nutzen."
 
 #: php/class-settings.php:151
@@ -323,7 +323,7 @@ msgid "https://buycloud.id/wordpress/featuredvideo/"
 msgstr "https://buycloud.id/wordpress/featuredvideo/"
 
 #. Description of the plugin/theme
-msgid "Add Featured Videos to your posts and pages."
+msgid "Add FeaturedVideos to your posts and pages."
 msgstr "Füge deinen Beiträgen und Seiten Beitragsvideos hinzu."
 
 #. Author of the plugin/theme

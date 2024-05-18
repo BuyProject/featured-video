@@ -1,13 +1,13 @@
-# Featured Video #
+# FeaturedVideo #
 
-Add Featured Videos to your posts and pages. Works like magic with most themes which use Featured Images. Local Media, YouTube, Vimeo and many more.
+Add FeaturedVideos to your posts and pages. Works like magic with most themes which use Featured Images. Local Media, YouTube, Vimeo and many more.
 
 
 
 ## Description ##
 > A picture is worth a thousand words. How many words is a video worth?
 
-Featured Videos work like Featured Images, just smoother: Paste a video URL into the designated new box on the post edit screen and the video will be displayed in place of a post image.
+FeaturedVideos work like Featured Images, just smoother: Paste a video URL into the designated new box on the post edit screen and the video will be displayed in place of a post image.
 
 There are three ways to get the videos onto your page:
 
@@ -20,7 +20,7 @@ For more details, check the [installation](http://wordpress.org/plugins/featured
 > <strong>Theme compatibility</strong><br>
 > Sadly many themes do not follow the WordPress standards and implement their own fancy functions for displaying featured images - those very likely break this plugin. Check out the [FAQ](https://wordpress.org/plugins/featuredvideo/faq/). Another common problem are sliders: Videos, in general, do not like sliders at all.
 
-See the plugin in action on [buycloud.id](https://buycloud.id/wordpress/featuredvideo/). There is a button in the sidebar to switch between the different featured video display modes: [Automatic](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=replace), [lazy](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=dynamic) and [overlay](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=overlay).
+See the plugin in action on [buycloud.id](https://buycloud.id/wordpress/featuredvideo/). There is a button in the sidebar to switch between the different FeaturedVideo display modes: [Automatic](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=replace), [lazy](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=dynamic) and [overlay](https://buycloud.id/wordpress/featuredvideo/?setfvpmode=overlay).
 
 Besides **Local Videos** you can use videos from a whole lot of external providers like **YouTube**, **Vimeo** and **Dailymotion**. **SoundCloud** and **Spotify** (including playlists) are supported as well. Check the [WordPress Codex](http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F) for a complete list. If some provider is not listed you can always just use an embed code or whatever HTML you like.
 
@@ -36,10 +36,10 @@ After installing the plugin check your site's *Media Settings* (`Settings -> Med
 ### Installation ###
 
 1. Visit your WordPress Administration interface and go to `Plugins -> Add New`
-2. Search for `Featured Video`, and click `Install Now` below the plugin's name
+2. Search for `FeaturedVideo`, and click `Install Now` below the plugin's name
 3. When the installation finished, click `Activate Plugin`
 
-The plugin is ready to go. Now edit your posts and add video links to the `Featured Video` box on the right! Plugin specific settings can be found under `Settings -> Media`.
+The plugin is ready to go. Now edit your posts and add video links to the `FeaturedVideo` box on the right! Plugin specific settings can be found under `Settings -> Media`.
 
 ### Theme integration ###
 

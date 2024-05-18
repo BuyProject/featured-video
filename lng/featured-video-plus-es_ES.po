@@ -4,15 +4,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: Featured Video\n"
+"Project-Id-Version: FeaturedVideo\n"
 "Language: es\n"
 
 #: php/class-backend.php:123
-msgid "Featured Video"
+msgid "FeaturedVideo"
 msgstr "Video destacado"
 
 #: php/class-backend.php:165
-msgid "Set Featured Video"
+msgid "Set FeaturedVideo"
 msgstr "Asignar Video Destacado"
 
 #: php/class-backend.php:171
@@ -24,17 +24,17 @@ msgid "The current theme does not support Featured Images"
 msgstr "El tema actual no soporta Imágenes Destacadas"
 
 #: php/class-backend.php:206
-msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
+msgid "To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
 msgstr ""
 
-#. #-#-#-#-#  featuredvideo.pot (Featured Video 1.9.2)  #-#-#-#-#
+#. #-#-#-#-#  featuredvideo.pot (FeaturedVideo 1.9.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-backend.php:568 php/class-backend.php:608
-msgid "Featured Video"
+msgid "FeaturedVideo"
 msgstr ""
 
 #: php/class-backend.php:573
-msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field."
+msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the FeaturedVideo input field."
 msgstr ""
 
 #: php/class-backend.php:580
@@ -58,7 +58,7 @@ msgid "Read %sthis%s on how to increase the maximum file upload size."
 msgstr ""
 
 #: php/class-backend.php:629 php/class-settings.php:39
-msgid "Featured Videos"
+msgid "FeaturedVideos"
 msgstr "Videos Principales"
 
 #: php/class-backend.php:631
@@ -66,11 +66,11 @@ msgid "Simply paste a URL into this input to add a bit extra life to your posts.
 msgstr ""
 
 #: php/class-backend.php:638
-msgid "To adjust how featured videos are displayed on the frontend checkout the %smedia settings%s."
+msgid "To adjust how FeaturedVideos are displayed on the frontend checkout the %smedia settings%s."
 msgstr ""
 
 #: php/class-backend.php:690
-msgid "Featured Videos require a Featured Image for automatic replacement."
+msgid "FeaturedVideos require a Featured Image for automatic replacement."
 msgstr ""
 
 #: php/class-backend.php:694
@@ -102,7 +102,7 @@ msgid "Support"
 msgstr "Soporte"
 
 #: php/class-settings.php:116
-msgid "To display your featured videos you can either make use of the automatic replacement, use the %s or manually edit your theme's source files to make use of the plugins PHP-functions."
+msgid "To display your FeaturedVideos you can either make use of the automatic replacement, use the %s or manually edit your theme's source files to make use of the plugins PHP-functions."
 msgstr "Para visualizar tus videos destacados puede hacer uso de la sustitución automática, utilice el %s o edite manualmente los archivos de origen de su tema para hacer uso de los plugins de funciones de PHP."
 
 #: php/class-settings.php:117
@@ -114,7 +114,7 @@ msgid "The current theme does not support featured images."
 msgstr ""
 
 #: php/class-settings.php:128
-msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s."
+msgid "To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s."
 msgstr ""
 
 #: php/class-settings.php:151
@@ -284,7 +284,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 #: 
-msgid "Add Featured Videos to your posts and pages."
+msgid "Add FeaturedVideos to your posts and pages."
 msgstr ""
 
 #. Author of the plugin/theme

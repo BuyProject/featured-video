@@ -1,6 +1,6 @@
 <?php
 if (empty($version) || empty($options) || empty($options_org)) {
-	exit('Featured Video Error:
+	exit('FeaturedVideo Error:
 		Upgrade can not be executed directly!
 		Must be called through FVP_Backend->upgrade().');
 }
@@ -190,7 +190,7 @@ switch ($version) {
 			$options['local']
 		);
 
-		// check all featured video post metas
+		// check all FeaturedVideo post metas
 		$ids = self::get_post_by_custom_meta('_fvp_video');
 		foreach ($ids as $id) {
 			$meta = maybe_unserialize(get_post_meta($id, '_fvp_video', true));

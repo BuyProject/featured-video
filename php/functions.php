@@ -2,7 +2,7 @@
 
 if ( ! function_exists('has_post_video') ) :
 /**
- * Checks if post has a featured video
+ * Checks if post has a FeaturedVideo
  *
  * @since 1.0
  *
@@ -23,7 +23,7 @@ endif;
 
 
 /**
- * Returns the posts featured video
+ * Returns the posts FeaturedVideo
  *
  * @since 1.0
  *
@@ -41,7 +41,7 @@ function get_the_post_video( $post_id = null, $size = null ) {
 
 
 /**
- * Echos the current posts featured video
+ * Echos the current posts FeaturedVideo
  *
  * @since 1.0
  *

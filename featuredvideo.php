@@ -2,7 +2,7 @@
 /*
 Plugin Name: FeaturedVideo
 Plugin URI: https://buycloud.id/wordpress/featuredvideo/
-Description: Add Featured Videos to your posts and pages.
+Description: Add FeaturedVideos to your posts and pages.
 Version: 2.3.4
 Author: Ari Sigit
 Author URI: https://buycloud.id

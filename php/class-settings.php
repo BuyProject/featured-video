@@ -33,19 +33,19 @@ class FVP_Settings
 	 */
 	public function settings_init()
 	{
-		// the featured video settings section on the media settings page
+		// the FeaturedVideo settings section on the media settings page
 		add_settings_section(
 			self::$section,
 			sprintf(
 				'<span id="%s">%s</span>',
 				self::$section,
-				esc_html__('Featured Videos', 'featuredvideo')
+				esc_html__('FeaturedVideos', 'featuredvideo')
 			),
 			array($this, 'section'),
 			self::$page
 		);
 
-		// settings fields for auto integration of featured videos - only available
+		// settings fields for auto integration of FeaturedVideos - only available
 		// in themes with enabled post-thumbnails / featured images
 		if (current_theme_supports('post-thumbnails')) {
 			add_settings_field(
@@ -126,7 +126,7 @@ class FVP_Settings
 		echo FVP_HTML::html(
 			'p',
 			array('class' => 'fvp-settings-section'),
-			sprintf(esc_html__('To display your featured videos you can either make use of the automatic replacement, use the %s or manually edit your theme\'s source files to make use of the plugins PHP-functions.', 'featuredvideo'), '<code>[featuredvideo]</code>-Shortcode') .
+			sprintf(esc_html__('To display your FeaturedVideos you can either make use of the automatic replacement, use the %s or manually edit your theme\'s source files to make use of the plugins PHP-functions.', 'featuredvideo'), '<code>[featuredvideo]</code>-Shortcode') .
 				sprintf(esc_html__('For more information about Shortcode and PHP functions see the %sContextual Help%s.', 'featuredvideo'), '<a href="#contextual-help" class="help-link">', '</a>')
 		);
 
@@ -139,7 +139,7 @@ class FVP_Settings
 				) .
 					sprintf(
 						esc_html__(
-							'To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s.',
+							'To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s.',
 							'featuredvideo'
 						),
 						'<code>',
@@ -556,9 +556,9 @@ class FVP_Settings
 					'If you have found a bug or think a specific feature is missing, %slet me know%s in the support forum. Like this plugin? %sRate it%s or %sbuy me a cookie%s!',
 					'featuredvideo'
 				),
-				'<a href="https://wordpress.org/support/plugin/featuredvideo#plugin-title" title="Featured Video Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/plugin/featuredvideo#plugin-title" title="FeaturedVideo Support Forum on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
-				'<a href="https://wordpress.org/support/view/plugin-reviews/featuredvideo#plugin-title" title="Rate Featured Video on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
+				'<a href="https://wordpress.org/support/view/plugin-reviews/featuredvideo#plugin-title" title="Rate FeaturedVideo on WordPress.org" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>',
 				'<a href="https://paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AD8UKMQW2DMM6" title="Gift to the developer!" target="_blank" rel="noopener noreferrer" style="font-weight: bold;">',
 				'</a>'

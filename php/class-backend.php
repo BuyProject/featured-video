@@ -79,7 +79,7 @@ class FVP_Backend extends Featured_Video_Plus
 			false
 		);
 
-		// Script handling featured video form interactions with ajax requests etc.
+		// Script handling FeaturedVideo form interactions with ajax requests etc.
 		wp_enqueue_script(
 			'fvp-post',
 			FVP_URL . "js/post$min.js",
@@ -131,7 +131,7 @@ class FVP_Backend extends Featured_Video_Plus
 			// Register metabox.
 			add_meta_box(
 				'featuredvideo-box',
-				__('Featured Video', 'featuredvideo'),
+				__('FeaturedVideo', 'featuredvideo'),
 				array($this, 'metabox_content'),
 				$post_type,
 				'side',
@@ -156,7 +156,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 		$content = '';
 
-		// Current featured video.
+		// Current FeaturedVideo.
 		$content .= sprintf(
 			'<div class="fvp-current-video"%s>%s</div>',
 			FVP_HTML::inline_styles(array(
@@ -165,13 +165,13 @@ class FVP_Backend extends Featured_Video_Plus
 			get_the_post_video($post_id, array(256, 144))
 		);
 
-		// Input box containing the featured video URL input.
+		// Input box containing the FeaturedVideo URL input.
 		$full = $has_post_video ? get_the_post_video_url($post_id) : '';
 
 		// Media gallery wrapper.
 		$content .= sprintf(
 			'<div class="fvp-input-wrapper" data-target=".fvp-video" data-title="%1$s" data-button="%1$s">',
-			esc_attr__('Set Featured Video', 'featuredvideo')
+			esc_attr__('Set FeaturedVideo', 'featuredvideo')
 		);
 
 		// Video input.
@@ -225,7 +225,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 			$content .= sprintf(
 				esc_html__(
-					'To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s.',
+					'To display FeaturedVideos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s.',
 					'featuredvideo'
 				),
 				'<code>',
@@ -238,10 +238,10 @@ class FVP_Backend extends Featured_Video_Plus
 			'</p></span>';
 		}
 
-		echo "\n\n\n<!-- Featured Video Metabox -->\n";
+		echo "\n\n\n<!-- FeaturedVideo Metabox -->\n";
 		wp_nonce_field(self::get_nonce_action($post_id), 'fvp_nonce');
 		echo $content;
-		echo "\n<!-- Featured Video Metabox End-->\n\n\n";
+		echo "\n<!-- FeaturedVideo Metabox End-->\n\n\n";
 	}
 
 
@@ -360,7 +360,7 @@ class FVP_Backend extends Featured_Video_Plus
 		// Do we have a screen capture to pull?
 		if (empty($data['img_url'])) {
 			$data['img_url'] = FVP_URL . 'img/placeholder.png';
-			$data['filename'] = 'Featured Video Placeholder';
+			$data['filename'] = 'FeaturedVideo Placeholder';
 		}
 
 		// Should we set the featured image?
@@ -540,7 +540,7 @@ class FVP_Backend extends Featured_Video_Plus
 		// Remove featured image.
 		delete_post_meta($post_id, '_thumbnail_id');
 
-		// If the image is a featured video thumbnail we might want to remove it
+		// If the image is a FeaturedVideo thumbnail we might want to remove it
 		// completely from the media library.
 		if (empty($meta['img'])) {
 			return false;
@@ -583,7 +583,7 @@ class FVP_Backend extends Featured_Video_Plus
 		}
 
 		if (has_post_video($post_id)) {
-			// Return featured video html as requested.
+			// Return FeaturedVideo html as requested.
 			$video = $this->get_the_post_video($post_id, null, true);
 			wp_send_json_success($video);
 		} else {
@@ -615,7 +615,7 @@ class FVP_Backend extends Featured_Video_Plus
 		}
 
 
-		// Retrieve featured video metadata.
+		// Retrieve FeaturedVideo metadata.
 		$meta = get_post_meta($post_id, '_fvp_video', true);
 
 		// Delete the image from database if feasible. This also again tries to
@@ -641,7 +641,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 
 	/**
-	 * Add a pointer to the Featured Video box on the post edit screen for
+	 * Add a pointer to the FeaturedVideo box on the post edit screen for
 	 * initial explanation.
 	 *
 	 * @param  {array}  $pointers
@@ -656,7 +656,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 		$pointers['fvp-post-box'] = array(
 			'target' => '#featuredvideo-box',
-			'title' => esc_html__('Featured Videos', 'featuredvideo'),
+			'title' => esc_html__('FeaturedVideos', 'featuredvideo'),
 			'content' => sprintf(
 				esc_html__(
 					'Simply paste a URL into this input to add a bit extra life to your posts. %sTry an example%s.',
@@ -666,7 +666,7 @@ class FVP_Backend extends Featured_Video_Plus
 				'</a>'
 			) . '</p><p>' . sprintf(
 				esc_html__(
-					'To adjust how featured videos are displayed on the frontend checkout the %smedia settings%s.',
+					'To adjust how FeaturedVideos are displayed on the frontend checkout the %smedia settings%s.',
 					'featuredvideo'
 				),
 				sprintf(
@@ -715,23 +715,23 @@ class FVP_Backend extends Featured_Video_Plus
 	public function featured_image_box($content, $post_id)
 	{
 		if (!has_post_video($post_id)) {
-			// Has no featured video so the plugin does not interfere.
+			// Has no FeaturedVideo so the plugin does not interfere.
 			return $content;
 		}
 
 		if (has_post_thumbnail($post_id)) {
-			// Has featured video and featured image.
+			// Has FeaturedVideo and featured image.
 			return $content . sprintf(
 				'<p class="hidden"><a href="#" class="fvp-remove-image">%s</a></p>',
 				esc_html__('Remove featured image')
 			);
 		}
 
-		// Has featured video but not featured image.
+		// Has FeaturedVideo but not featured image.
 		return sprintf(
 			'<p class="fvp-notice">%s <a href="#" class="fvp-set-image hide-if-no-js">%s</a></p>',
 			esc_html__(
-				'Featured Videos require a Featured Image for automatic replacement.',
+				'FeaturedVideos require a Featured Image for automatic replacement.',
 				'featuredvideo'
 			),
 			esc_html__('Auto set', 'featuredvideo')
