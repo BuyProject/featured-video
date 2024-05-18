@@ -1,26 +1,32 @@
 <?php
+
 /**
  * Class providing additional functionality to WordPress' native oEmbed
  * functionality.
  *
  * @link http://codex.wordpress.org/oEmbed
  * @link http://oembed.com/ oEmbed Homepage
- * @link https://github.com/WordPress/WordPress/tree/master/wp-includes/class-oembed.php
+ * @link https://github.com/WordPress/WordPress/tree/master/wp-includes/class-wp-oembed.php
  *
  * @package Featured Video Plus
  * @subpackage oEmbed
  * @since 2.0.0
  */
-class FVP_oEmbed {
+class FVP_oEmbed
+{
 	private $oembed;
 
-	public function __construct() {
+	public function __construct()
+	{
 		// Does not extend oEmbed in order to not initialize it a second time.
-		require_once( ABSPATH . '/' . WPINC . '/class-oembed.php' );
+		require_once(ABSPATH . '/' . WPINC . '/class-wp-oembed.php');
 		$this->oembed = _wp_oembed_get_object();
 
 		add_filter(
-			'oembed_fetch_url', array( $this, 'additional_arguments' ), 10, 3
+			'oembed_fetch_url',
+			array($this, 'additional_arguments'),
+			10,
+			3
 		);
 	}
 
@@ -32,8 +38,9 @@ class FVP_oEmbed {
 	 * @param  {array}  $args
 	 * @return {}               Whatever the other method returns.
 	 */
-	public function __call( $method, $args ) {
-		return call_user_func_array( array( $this->oembed, $method ), $args );
+	public function __call($method, $args)
+	{
+		return call_user_func_array(array($this->oembed, $method), $args);
 	}
 
 
@@ -43,11 +50,12 @@ class FVP_oEmbed {
 	 * @see   http://oembed.com/
 	 * @since 2.0.0
 	 */
-	public function request( $url ) {
+	public function request($url)
+	{
 		// fetch the oEmbed data with some arbitrary big size to get the biggest
 		// thumbnail possible.
 		$raw = $this->oembed->fetch(
-			$this->get_provider( $url ),
+			$this->get_provider($url),
 			$url,
 			array(
 				'width'  => 4096,
@@ -55,7 +63,7 @@ class FVP_oEmbed {
 			)
 		);
 
-		return ! empty( $raw ) ? $raw : false;
+		return !empty($raw) ? $raw : false;
 	}
 
 
@@ -68,59 +76,60 @@ class FVP_oEmbed {
 	 * @param {array}  $args Optional arguments. Usually passed from a shortcode.
 	 * @return {false/string} False on failure, other the embed HTML.
 	 */
-	public function get_html( $url, $args = array(), $provider = null ) {
-		if ( $provider ) {
-			$args = $this->filter_legal_args( $provider, $args );
+	public function get_html($url, $args = array(), $provider = null)
+	{
+		if ($provider) {
+			$args = $this->filter_legal_args($provider, $args);
 		}
 
-		$html = $this->oembed->get_html( $url, $args );
+		$html = $this->oembed->get_html($url, $args);
 
-		if ( empty( $provider ) ) {
+		if (empty($provider)) {
 			return $html;
 		}
 
 		// Some providers do not provide it's player API to oEmbed requests,
 		// therefore the plugin needs to manually interfere with their iframe's
 		// source URL..
-		switch ( $provider ) {
+		switch ($provider) {
 
-			// YouTube.com
+				// YouTube.com
 			case 'youtube':
 				// Add `origin` paramter.
-				$args['origin'] = urlencode( get_bloginfo( 'url' ) );
+				$args['origin'] = urlencode(get_bloginfo('url'));
 
 				// The loop parameter does not work with single videos if there is no
 				// playlist defined. Workaround: Set playlist to video itself.
 				// @see https://developers.google.com/youtube/player_parameters#loop-supported-players
-				if ( ! empty( $args['loop'] ) && $args['loop'] ) {
-					$args['playlist'] = $this->get_youtube_video_id( $url );
+				if (!empty($args['loop']) && $args['loop']) {
+					$args['playlist'] = $this->get_youtube_video_id($url);
 				}
 
 				// Remove fullscreen button manually because the YouTube API
 				// does not care about `&fs=0`.
-				if ( array_key_exists( 'fs', $args ) && $args['fs'] == 0 ) {
-					$html = str_replace( 'allowfullscreen', '', $html );
+				if (array_key_exists('fs', $args) && $args['fs'] == 0) {
+					$html = str_replace('allowfullscreen', '', $html);
 				}
 
 				// We strip the 'feature=oembed' from the parameters because it breaks
 				// some parameters.
 				$hook = '?feature=oembed';
-				$html = str_replace( $hook, '', $html );
+				$html = str_replace($hook, '', $html);
 				break;
 
-			// DailyMotion.com
+				// DailyMotion.com
 			case 'dailymotion':
-				$args = $this->translate_time_arg( $args );
+				$args = $this->translate_time_arg($args);
 				break;
 		}
 
-		if ( ! empty( $args ) ) {
+		if (!empty($args)) {
 			$pattern = "/src=([\"'])([^\"']*)[\"']/";
-			preg_match( $pattern, $html, $match );
-			if ( ! empty( $match[1] ) && ! empty( $match[2] ) ) {
-				$code = $this->clean_url( $match[2] );
-				$replace = sprintf( 'src=$1%s$1', add_query_arg( $args, $code ) );
-				$html = preg_replace( $pattern, $replace, $html );
+			preg_match($pattern, $html, $match);
+			if (!empty($match[1]) && !empty($match[2])) {
+				$code = $this->clean_url($match[2]);
+				$replace = sprintf('src=$1%s$1', add_query_arg($args, $code));
+				$html = preg_replace($pattern, $replace, $html);
 			}
 		}
 
@@ -137,9 +146,10 @@ class FVP_oEmbed {
 	 * @param {string} $urls
 	 * @return {string}
 	 */
-	public function clean_url($url) {
-		$url = preg_replace( '/\?/', '&', $url, 1);
-		return preg_replace( '/&/',  '?', $url, 1);
+	public function clean_url($url)
+	{
+		$url = preg_replace('/\?/', '&', $url, 1);
+		return preg_replace('/&/',  '?', $url, 1);
 	}
 
 
@@ -153,14 +163,15 @@ class FVP_oEmbed {
 	 * @param  {assoc}  $args     The additional parameters for the provider
 	 * @return {string}           $provider with added parameters.
 	 */
-	public function additional_arguments( $provider, $url, $args ) {
+	public function additional_arguments($provider, $url, $args)
+	{
 		unset(
 			$args['width'],
 			$args['height'],
 			$args['discover']
 		);
 
-		return add_query_arg( $args, $provider );;
+		return add_query_arg($args, $provider);;
 	}
 
 
@@ -177,15 +188,16 @@ class FVP_oEmbed {
 	 * @return {assoc}  Associative array containing the arguments as key value
 	 *                  pairs
 	 */
-	public function get_args( $url, $provider = null, $filter_legals = true ) {
-		$args = $this->parse_url_args( $url );
+	public function get_args($url, $provider = null, $filter_legals = true)
+	{
+		$args = $this->parse_url_args($url);
 
-		if ( $filter_legals ) {
-			$provider = empty( $provider ) ?
-				$this->get_provider_name( $url ) :
+		if ($filter_legals) {
+			$provider = empty($provider) ?
+				$this->get_provider_name($url) :
 				$provider;
 
-			$args = $this->filter_legal_args( $provider, $args );
+			$args = $this->filter_legal_args($provider, $args);
 		}
 
 		return $args;
@@ -199,8 +211,9 @@ class FVP_oEmbed {
 	 * @param  {string} $url oEmbed request URL
 	 * @return {string}      Provider name
 	 */
-	public function get_provider_name( $url ) {
-		$host = parse_url( $url, PHP_URL_HOST );
+	public function get_provider_name($url)
+	{
+		$host = parse_url($url, PHP_URL_HOST);
 
 		$tlds_set = array(
 			'com',
@@ -208,13 +221,13 @@ class FVP_oEmbed {
 			'tv',
 		);
 
-		$tlds = '(?:' . implode( ')|(?:', $tlds_set ) . ')';
+		$tlds = '(?:' . implode(')|(?:', $tlds_set) . ')';
 		$pattern = '/(?:www\.)?(.*)\.' . $tlds  . '/';
 
-		preg_match( $pattern , $host, $match );
+		preg_match($pattern, $host, $match);
 
-		if ( ! empty( $match[1] ) ) {
-			return strtolower( $match[1] );
+		if (!empty($match[1])) {
+			return strtolower($match[1]);
 		}
 
 		return false;
@@ -233,44 +246,47 @@ class FVP_oEmbed {
 	 * @param string|array  $args Optional provider arguments.
 	 * @return false|string False on failure, otherwise the oEmbed provider URL.
 	 */
-	public function get_provider( $url, $args = '' ) {
+	public function get_provider($url, $args = '')
+	{
 		// If the WordPress native oembed class has the get_provider function,
 		// use that one.
-		if ( method_exists( $this->oembed, 'get_provider' ) ) {
-			return $this->oembed->get_provider( $url, $args );
+		if (method_exists($this->oembed, 'get_provider')) {
+			return $this->oembed->get_provider($url, $args);
 		}
 
-		$args = wp_parse_args( $args );
+		$args = wp_parse_args($args);
 
 		$provider = false;
-		if ( ! isset( $args['discover'] ) ) {
+		if (!isset($args['discover'])) {
 			$args['discover'] = true;
 		}
 
-		foreach ( $this->oembed->providers AS $matchmask => $data ) {
-			list( $providerurl, $regex ) = $data;
+		foreach ($this->oembed->providers as $matchmask => $data) {
+			list($providerurl, $regex) = $data;
 
 			// Turn the asterisk-type provider URLs into regex
-			if ( ! $regex ) {
+			if (!$regex) {
 				$matchmask = '#' . str_replace(
 					'___wildcard___',
 					'(.+)',
-					preg_quote( str_replace( '*', '___wildcard___', $matchmask ), '#' )
+					preg_quote(str_replace('*', '___wildcard___', $matchmask), '#')
 				) . '#i';
 				$matchmask = preg_replace(
-					'|^#http\\\://|', '#https?\://', $matchmask
+					'|^#http\\\://|',
+					'#https?\://',
+					$matchmask
 				);
 			}
 
-			if ( preg_match( $matchmask, $url ) ) {
+			if (preg_match($matchmask, $url)) {
 				// JSON is easier to deal with than XML
-				$provider = str_replace( '{format}', 'json', $providerurl );
+				$provider = str_replace('{format}', 'json', $providerurl);
 				break;
 			}
 		}
 
-		if ( ! $provider && $args['discover'] ) {
-			$provider = $this->oembed->discover( $url );
+		if (!$provider && $args['discover']) {
+			$provider = $this->oembed->discover($url);
 		}
 
 		return $provider;
@@ -283,19 +299,20 @@ class FVP_oEmbed {
 	 * @param  {string} $url
 	 * @return {string/bool} Video ID or false on error.
 	 */
-	public function get_video_id( $url ) {
-		if ( empty( $url ) ) {
+	public function get_video_id($url)
+	{
+		if (empty($url)) {
 			return false;
 		}
 
-		$provider = $this->get_provider_name( $url );
-		if ( empty( $provider ) ) {
+		$provider = $this->get_provider_name($url);
+		if (empty($provider)) {
 			return false;
 		}
 
-		switch ( $provider ) {
+		switch ($provider) {
 			case 'dailymotion':
-				return strtok( basename( $url ), '_' );
+				return strtok(basename($url), '_');
 				break;
 		}
 
@@ -310,22 +327,23 @@ class FVP_oEmbed {
 	 * @param  {string} $id
 	 * @return {string/bool} Video URL or false on error.
 	 */
-	public function get_thumbnail_url( $provider, $id ) {
+	public function get_thumbnail_url($provider, $id)
+	{
 		static $thumbnail_apis = array(
 			'dailymotion' =>
-				'https://api.dailymotion.com/video/%s?fields=thumbnail_url,poster_url',
+			'https://api.dailymotion.com/video/%s?fields=thumbnail_url,poster_url',
 		);
 
-		if ( empty( $provider ) || empty( $id ) ) {
+		if (empty($provider) || empty($id)) {
 			return false;
 		}
 
-		$result = @file_get_contents( sprintf( $thumbnail_apis[$provider], $id ) );
-		if ( ! empty( $result ) ) {
-			switch ( $provider ) {
+		$result = @file_get_contents(sprintf($thumbnail_apis[$provider], $id));
+		if (!empty($result)) {
+			switch ($provider) {
 				case 'dailymotion':
-					$data = json_decode( $result, true );
-					return ! empty( $data['thumbnail_url'] ) ?
+					$data = json_decode($result, true);
+					return !empty($data['thumbnail_url']) ?
 						$data['thumbnail_url'] : $data['poster_url'];
 					break;
 			}
@@ -345,7 +363,8 @@ class FVP_oEmbed {
 	 * @param  {array} $filter Enumerated array containing the legal keys to keep
 	 * @return {assoc} Filtered array
 	 */
-	private function filter_legal_args( $provider, $args ) {
+	private function filter_legal_args($provider, $args)
+	{
 		$legals = array(
 			'default' => array(
 				'width',
@@ -430,12 +449,12 @@ class FVP_oEmbed {
 
 		$result = array();
 
-		if ( ! empty( $legals[ $provider ] ) ) {
-			$combinedlegals = array_merge( $legals['default'], $legals[ $provider ] );
-			foreach ( $combinedlegals AS $key => $val ) {
-				if ( array_key_exists( $val, $args ) && ! is_null( $args[ $val ] ) ) {
-					$key = is_numeric( $key ) ? $val : $key;
-					$result[ $key ] = urlencode( $args[ $val ] );
+		if (!empty($legals[$provider])) {
+			$combinedlegals = array_merge($legals['default'], $legals[$provider]);
+			foreach ($combinedlegals as $key => $val) {
+				if (array_key_exists($val, $args) && !is_null($args[$val])) {
+					$key = is_numeric($key) ? $val : $key;
+					$result[$key] = urlencode($args[$val]);
 				}
 			}
 		}
@@ -455,16 +474,17 @@ class FVP_oEmbed {
 	 * @param  {string} $url the URL to parse for arguments
 	 * @return array containing query and fragment arguments
 	 */
-	private function parse_url_args( $url ) {
+	private function parse_url_args($url)
+	{
 		// parse query
-		$query = parse_url( $url, PHP_URL_QUERY );
+		$query = parse_url($url, PHP_URL_QUERY);
 		$query_args = array();
-		parse_str( $query, $query_args );
+		parse_str($query, $query_args);
 
 		// parse fragment
-		$fragment = parse_url( $url, PHP_URL_FRAGMENT );
+		$fragment = parse_url($url, PHP_URL_FRAGMENT);
 		$fragment_args = array();
-		parse_str( $fragment, $fragment_args );
+		parse_str($fragment, $fragment_args);
 
 		// merge query and fragment args
 		$args = array_merge(
@@ -489,21 +509,22 @@ class FVP_oEmbed {
 	 * @param  {string} $t
 	 * @return {int}    seconds
 	 */
-	private function handle_m_s_string( $t ) {
+	private function handle_m_s_string($t)
+	{
 		$seconds = 0;
 
-		preg_match( '/(\d+)m/', $t, $m );
-		if ( ! empty( $m[1] ) ) {
+		preg_match('/(\d+)m/', $t, $m);
+		if (!empty($m[1])) {
 			$seconds += $m[1] * 60;
 		}
 
-		preg_match( '/(\d+)s/', $t, $s );
-		if ( ! empty( $s[1] ) ) {
+		preg_match('/(\d+)s/', $t, $s);
+		if (!empty($s[1])) {
 			$seconds += $s[1];
 		}
 
-		if ( empty( $m[1] ) && empty( $s[1] ) ) {
-			$seconds += intval( $t );
+		if (empty($m[1]) && empty($s[1])) {
+			$seconds += intval($t);
 		}
 
 		return $seconds;
@@ -523,14 +544,15 @@ class FVP_oEmbed {
 	 * @param  {string} $dst        Key of the destination parameter
 	 * @return {array}  Updated $parameters array
 	 */
-	private function translate_time_arg( $args, $src = 't', $dst = 'start' ) {
-		if ( ! empty( $args[ $src ] ) ) {
-			$t = $this->handle_m_s_string( $args[ $src ] );
+	private function translate_time_arg($args, $src = 't', $dst = 'start')
+	{
+		if (!empty($args[$src])) {
+			$t = $this->handle_m_s_string($args[$src]);
 
-			unset( $args[ $src ] );
+			unset($args[$src]);
 
-			if ( $t ) {
-				$args[ $dst ] = $t;
+			if ($t) {
+				$args[$dst] = $t;
 			}
 		}
 
@@ -546,12 +568,13 @@ class FVP_oEmbed {
 	 * @param  {string} $url
 	 * @return {string} YouTube ID
 	 */
-	private function get_youtube_video_id( $url ) {
+	private function get_youtube_video_id($url)
+	{
 		$pattern =
-		 	'/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)'.
+			'/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)' .
 			'|youtu\.be\/)([^"&?\/ ]{11})/i';
 
-		if ( preg_match( $pattern, $url, $match ) ) {
+		if (preg_match($pattern, $url, $match)) {
 			return $match[1];
 		}
 
