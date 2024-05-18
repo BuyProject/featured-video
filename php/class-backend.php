@@ -130,8 +130,8 @@ class FVP_Backend extends Featured_Video_Plus
 
 			// Register metabox.
 			add_meta_box(
-				'wp-featured-video-box',
-				__('Featured Video', 'wp-featured-video'),
+				'featured-video-box',
+				__('Featured Video', 'featured-video'),
 				array($this, 'metabox_content'),
 				$post_type,
 				'side',
@@ -171,13 +171,13 @@ class FVP_Backend extends Featured_Video_Plus
 		// Media gallery wrapper.
 		$content .= sprintf(
 			'<div class="fvp-input-wrapper" data-target=".fvp-video" data-title="%1$s" data-button="%1$s">',
-			esc_attr__('Set Featured Video', 'wp-featured-video')
+			esc_attr__('Set Featured Video', 'featured-video')
 		);
 
 		// Video input.
 		$content .= sprintf(
 			'<textarea class="fvp-video" name="fvp_video" type="text" placeholder="%s">%s</textarea>',
-			esc_attr__('Video URL', 'wp-featured-video'),
+			esc_attr__('Video URL', 'featured-video'),
 			$full
 		);
 
@@ -205,7 +205,7 @@ class FVP_Backend extends Featured_Video_Plus
 			), true, true),
 			esc_html__(
 				'Could not resolve the inserted value to a video. Are you sure it is a legal video url and the server can connect to its provider? If you tried to insert a raw embed code, you might need to enable it in the media settings.',
-				'wp-featured-video'
+				'featured-video'
 			)
 		);
 
@@ -219,14 +219,14 @@ class FVP_Backend extends Featured_Video_Plus
 				'<span style="font-weight: bold;">%s</span>&nbsp;',
 				esc_html__(
 					'The current theme does not support Featured Images',
-					'wp-featured-video'
+					'featured-video'
 				)
 			);
 
 			$content .= sprintf(
 				esc_html__(
 					'To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s.',
-					'wp-featured-video'
+					'featured-video'
 				),
 				'<code>',
 				'</code>',
@@ -238,10 +238,10 @@ class FVP_Backend extends Featured_Video_Plus
 			'</p></span>';
 		}
 
-		echo "\n\n\n<!-- WP Featured Video Metabox -->\n";
+		echo "\n\n\n<!-- Featured Video Metabox -->\n";
 		wp_nonce_field(self::get_nonce_action($post_id), 'fvp_nonce');
 		echo $content;
-		echo "\n<!-- WP Featured Video Metabox End-->\n\n\n";
+		echo "\n<!-- Featured Video Metabox End-->\n\n\n";
 	}
 
 
@@ -360,7 +360,7 @@ class FVP_Backend extends Featured_Video_Plus
 		// Do we have a screen capture to pull?
 		if (empty($data['img_url'])) {
 			$data['img_url'] = FVP_URL . 'img/placeholder.png';
-			$data['filename'] = 'WP Featured Video Placeholder';
+			$data['filename'] = 'Featured Video Placeholder';
 		}
 
 		// Should we set the featured image?
@@ -641,7 +641,7 @@ class FVP_Backend extends Featured_Video_Plus
 
 
 	/**
-	 * Add a pointer to the WP Featured Video box on the post edit screen for
+	 * Add a pointer to the Featured Video box on the post edit screen for
 	 * initial explanation.
 	 *
 	 * @param  {array}  $pointers
@@ -655,19 +655,19 @@ class FVP_Backend extends Featured_Video_Plus
 		}
 
 		$pointers['fvp-post-box'] = array(
-			'target' => '#wp-featured-video-box',
-			'title' => esc_html__('Featured Videos', 'wp-featured-video'),
+			'target' => '#featured-video-box',
+			'title' => esc_html__('Featured Videos', 'featured-video'),
 			'content' => sprintf(
 				esc_html__(
 					'Simply paste a URL into this input to add a bit extra life to your posts. %sTry an example%s.',
-					'wp-featured-video'
+					'featured-video'
 				),
 				'<a href="#" onclick="jQuery(\'.fvp-video\').val(\'https://youtu.be/CfNHleTEpTI\').trigger(\'blur\'); return false;">',
 				'</a>'
 			) . '</p><p>' . sprintf(
 				esc_html__(
 					'To adjust how featured videos are displayed on the frontend checkout the %smedia settings%s.',
-					'wp-featured-video'
+					'featured-video'
 				),
 				sprintf(
 					'<a href="%s/wp-admin/options-media.php#fvp-section">',
@@ -732,9 +732,9 @@ class FVP_Backend extends Featured_Video_Plus
 			'<p class="fvp-notice">%s <a href="#" class="fvp-set-image hide-if-no-js">%s</a></p>',
 			esc_html__(
 				'Featured Videos require a Featured Image for automatic replacement.',
-				'wp-featured-video'
+				'featured-video'
 			),
-			esc_html__('Auto set', 'wp-featured-video')
+			esc_html__('Auto set', 'featured-video')
 		) . $content;
 	}
 

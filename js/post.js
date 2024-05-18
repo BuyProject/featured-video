@@ -130,7 +130,7 @@
   $(document).ready(function () {
     $input = $('.fvp-video');
     $media = $input.siblings('.fvp-video-choose').children('.fvp-media-icon');
-    $invalidNotice = $('#wp-featured-video-box .fvp-notice-invalid');
+    $invalidNotice = $('#featured-video-box .fvp-notice-invalid');
     currentUrl = $input.val();
     mediaicon = $media.css('backgroundImage');
 
@@ -138,7 +138,7 @@
     // Update video and featured image with the returned data.
     $input.blur(submitVideo);
 
-    $('#wp-featured-video-box .notice-dismiss').click(function (e) {
+    $('#featured-video-box .notice-dismiss').click(function (e) {
       $input.val('');
       $invalidNotice.hide();
       submitVideo(e);

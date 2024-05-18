@@ -15,7 +15,7 @@ var initFeaturedVideoPlus;
    */
   function unwrap() {
     // Remove links around videos.
-    $('.has-post-video a>.wp-featured-video,' +
+    $('.has-post-video a>.featured-video,' +
       '.has-post-video a>.fvp-dynamic,' +
       '.has-post-video a>.fvp-overlay,' +
       '.has-post-video a>.wp-video,' +
@@ -36,7 +36,7 @@ var initFeaturedVideoPlus;
    */
   function fitVids() {
     if (fvpdata.fitvids) {
-      $('.wp-featured-video.fvp-responsive').fitVids({
+      $('.featured-video.fvp-responsive').fitVids({
         customSelector: ['iframe', 'object', 'embed']
       });
     }
@@ -170,7 +170,7 @@ var initFeaturedVideoPlus;
    * Initialize the plugins JS functionality.
    */
   function init() {
-    var newSet = $('.wp-featured-video, .fvp-overlay, .fvp-dynamic');
+    var newSet = $('.featured-video, .fvp-overlay, .fvp-dynamic');
     if (newSet.is(selectorCache)) { return false; }
     selectorCache = newSet;
 
@@ -216,7 +216,7 @@ var initFeaturedVideoPlus;
     // Wordaround for chrome bug
     // See https://code.google.com/p/chromium/issues/detail?id=395791
     if (!!window.chrome) {
-      $('.wp-featured-video iframe').each(function () {
+      $('.featured-video iframe').each(function () {
         this.src = this.src;
       });
     }

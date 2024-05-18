@@ -1,20 +1,20 @@
 <?php
-if ( empty( $version ) || empty( $options ) || empty( $options_org ) ) {
-	exit('WP Featured Video Error:
+if (empty($version) || empty($options) || empty($options_org)) {
+	exit('Featured Video Error:
 		Upgrade can not be executed directly!
 		Must be called through FVP_Backend->upgrade().');
 }
 
-switch ( $version ) {
+switch ($version) {
 	case '1.0':
 	case '1.1':
 		$users = array_merge(
-			get_users( array( 'role' => 'Administrator' ) ),
-			get_users( array( 'role' => 'Super Admin'   ) )
+			get_users(array('role' => 'Administrator')),
+			get_users(array('role' => 'Super Admin'))
 		);
 
-		foreach ( $users AS $user ) {
-			delete_user_meta( $user->ID, 'fvp_activation_notification_ignore' );
+		foreach ($users as $user) {
+			delete_user_meta($user->ID, 'fvp_activation_notification_ignore');
 		}
 
 
@@ -43,7 +43,7 @@ switch ( $version ) {
 			'height' => 315,
 			'align'  => 'left',
 		);
-		unset( $options['width'], $options['height'] );
+		unset($options['width'], $options['height']);
 
 
 	case '1.3':
@@ -52,7 +52,7 @@ switch ( $version ) {
 		$options['youtube']['logo']            = 1;
 		$options['dailymotion']['syndication'] = '';
 		$options['align'] = $options['sizing']['wmode'] == 'auto' ? 'center' : $options['sizing']['align'];
-		unset( $options['sizing']['align'] );
+		unset($options['sizing']['align']);
 
 
 	case '1.4':
@@ -60,20 +60,20 @@ switch ( $version ) {
 		$options['local']['videojs']['js']  = true;
 		$options['local']['videojs']['css'] = true;
 		$options['local']['videojs']['cdn'] = false;
-		unset( $options['videojs'] );
+		unset($options['videojs']);
 
 
 	case '1.5':
 	case '1.5.1':
 		$options['youtube']['jsapi']           = 0;
 		$options['local']['videojs']['poster'] = false;
-		unset( $options['reged'], $options['out'] );
+		unset($options['reged'], $options['out']);
 
 
 	case '1.6':
 	case '1.6.1':
 		$options['usage'] = $options['overwrite'] ? 'replace' : 'manual'; // replace;manual;overlay
-		unset( $options['overwrite'] );
+		unset($options['overwrite']);
 
 
 	case '1.7':
@@ -81,7 +81,7 @@ switch ( $version ) {
 		$options['local']['cdn']     = $options['local']['videojs']['cdn'];
 		$options['local']['enabled'] = $options['local']['videojs']['js'];
 		$options['local']['poster']  = $options['local']['videojs']['poster'];
-		unset( $options['local']['videojs'] );
+		unset($options['local']['videojs']);
 
 		$options['local']['foreground'] = 'cccccc';
 		$options['local']['highlight']  = '66a8cc';
@@ -104,24 +104,24 @@ switch ( $version ) {
 	case '1.9':
 	case '1.9.1':
 		$sizing = array(
-			'responsive' => ! empty( $options['sizing']['wmode'] ) ?
+			'responsive' => !empty($options['sizing']['wmode']) ?
 				(bool)  $options['sizing']['wmode']   : true,
-			'width'      => ! empty( $options['sizing']['width'] ) ?
-				intval( $options['sizing']['width'] ) : 640,
+			'width'      => !empty($options['sizing']['width']) ?
+				intval($options['sizing']['width']) : 640,
 		);
-		unset( $options['sizing'] );
+		unset($options['sizing']);
 		$options['sizing'] = $sizing;
 
 		$options['conditions'] = array(
-			'home'   => ! empty( $options['ishome'] )  && $options['ishome'],
-			'single' => ! empty( $options['issingle'] ) && $options['issingle'],
+			'home'   => !empty($options['ishome'])  && $options['ishome'],
+			'single' => !empty($options['issingle']) && $options['issingle'],
 		);
 		$options['mode'] = $options['usage'];
 		$options['alignment'] = $options['align'];
 		$options['youtube']['showinfo']    = $options['youtube']['info'];
 		$options['youtube']['enablejsapi'] = $options['youtube']['jsapi'];
 		$options['youtube']['modestbranding'] =
-			( $options['youtube']['logo'] + 1 ) % 2;
+			($options['youtube']['logo'] + 1) % 2;
 
 		unset(
 			$options['ishome'],
@@ -147,7 +147,7 @@ switch ( $version ) {
 				)
 			),
 			'vimeo' => array_diff_assoc(
-				! empty( $options['vimeo'] ) ? $options['vimeo'] : array(),
+				!empty($options['vimeo']) ? $options['vimeo'] : array(),
 				array(
 					'portrait' => 0,
 					'title'    => 1,
@@ -156,7 +156,7 @@ switch ( $version ) {
 				)
 			),
 			'youtube' => array_diff_assoc(
-				! empty( $options['youtube'] ) ? $options['youtube'] : array(),
+				!empty($options['youtube']) ? $options['youtube'] : array(),
 				array(
 					'theme' => 'dark',
 					'color' => 'red',
@@ -171,7 +171,7 @@ switch ( $version ) {
 				)
 			),
 			'dailymotion' => array_diff_assoc(
-				! empty( $options['dailymotion'] ) ? $options['dailymotion'] : array(),
+				!empty($options['dailymotion']) ? $options['dailymotion'] : array(),
 				array(
 					'foreground'  => 'F7FFFD',
 					'highlight'   => 'FFC300',
@@ -191,20 +191,20 @@ switch ( $version ) {
 		);
 
 		// check all featured video post metas
-		$ids = self::get_post_by_custom_meta( '_fvp_video' );
-		foreach ( $ids as $id ) {
-			$meta = maybe_unserialize( get_post_meta( $id, '_fvp_video', true ) );
+		$ids = self::get_post_by_custom_meta('_fvp_video');
+		foreach ($ids as $id) {
+			$meta = maybe_unserialize(get_post_meta($id, '_fvp_video', true));
 
 			// Remove and re-add video.
-			$this->save( array( 'id' => $id, 'fvp_video' => '' ) );
-			$this->save( array( 'id' => $id, 'fvp_video' => $meta['full'] ) );
+			$this->save(array('id' => $id, 'fvp_video' => ''));
+			$this->save(array('id' => $id, 'fvp_video' => $meta['full']));
 		}
 
 
 	case '2.0.3':
 		$options['single_replace'] = false;
-		foreach( $options['conditions'] AS $key => $value ) {
-			$options['conditions'][ $key ] = (bool) $value;
+		foreach ($options['conditions'] as $key => $value) {
+			$options['conditions'][$key] = (bool) $value;
 		}
 
 	case '2.1.2':
@@ -213,12 +213,12 @@ switch ( $version ) {
 		);
 
 		if (
-			! empty( $options['default_args']['general']['autoplay'] ) &&
+			!empty($options['default_args']['general']['autoplay']) &&
 			$options['default_args']['general']['autoplay']
 		) {
 			$options['autoplay']['always'] = true;
 		}
-		unset( $options['default_args']['general']['autoplay'] );
+		unset($options['default_args']['general']['autoplay']);
 
 	case '2.3.0':
 		$options['legal_html'] = array(
@@ -229,7 +229,7 @@ switch ( $version ) {
 
 
 	default:
-		update_option( 'fvp-settings', $options );
-		update_option( 'fvp-version', FVP_VERSION );
+		update_option('fvp-settings', $options);
+		update_option('fvp-version', FVP_VERSION);
 		break;
 }

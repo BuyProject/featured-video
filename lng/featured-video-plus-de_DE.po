@@ -54,12 +54,12 @@ msgstr "Beitragsvideos benötigen ein Beitragsbild um automatisch dargestellt we
 msgid "Auto set"
 msgstr "Automatisch erstellen"
 
-#. #-#-#-#-#  tmp-wp-featured-video.pot (WP Featured Video 2.2.3) 
+#. #-#-#-#-#  tmp-featured-video.pot (Featured Video 2.2.3) 
 #. #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-help.php:23
-msgid "WP Featured Video"
-msgstr "WP Featured Video"
+msgid "Featured Video"
+msgstr "Featured Video"
 
 #: php/class-help.php:31
 msgid "Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field."
@@ -99,8 +99,8 @@ msgid "Featured Image"
 msgstr "Beitragsbild"
 
 #: php/class-help.php:143
-msgid "WP Featured Video: Shortcode"
-msgstr "WP Featured Video: Shortcode"
+msgid "Featured Video: Shortcode"
+msgstr "Featured Video: Shortcode"
 
 #: php/class-help.php:156
 msgid "Displays the video in its default size."
@@ -319,8 +319,8 @@ msgid "If you have found a bug or think a specific feature is missing, %slet me 
 msgstr "Wenn du einen Fehler gefunden hast oder eine bestimmte Funktion vermisst, %ssag im Support-Forum Bescheid%s. Dir gefällt das Plugin? %sHinterlasse eine Bewertung%s oder %sspende für die Entwicklung%s!"
 
 #. Plugin URI of the plugin/theme
-msgid "https://buycloud.id/wordpress/wp-featured-video/"
-msgstr "https://buycloud.id/wordpress/wp-featured-video/"
+msgid "https://buycloud.id/wordpress/featured-video/"
+msgstr "https://buycloud.id/wordpress/featured-video/"
 
 #. Description of the plugin/theme
 msgid "Add Featured Videos to your posts and pages."

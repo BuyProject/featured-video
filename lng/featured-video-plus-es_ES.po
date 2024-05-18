@@ -4,7 +4,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: POEditor.com\n"
-"Project-Id-Version: WP Featured Video\n"
+"Project-Id-Version: Featured Video\n"
 "Language: es\n"
 
 #: php/class-backend.php:123
@@ -27,10 +27,10 @@ msgstr "El tema actual no soporta Imágenes Destacadas"
 msgid "To display Featured Videos you need to use the %1$sShortcode%2$s or %1$sPHP functions%2$s. To hide this notice deactivate %3$sReplace Featured Images%4$s in the %5$sMedia Settings%6$s."
 msgstr ""
 
-#. #-#-#-#-#  wp-featured-video.pot (WP Featured Video 1.9.2)  #-#-#-#-#
+#. #-#-#-#-#  featured-video.pot (Featured Video 1.9.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: php/class-backend.php:568 php/class-backend.php:608
-msgid "WP Featured Video"
+msgid "Featured Video"
 msgstr ""
 
 #: php/class-backend.php:573
@@ -279,7 +279,7 @@ msgstr "Visualizar el video con un ancho y una altura fijos."
 
 #. Plugin URI of the plugin/theme
 #: 
-msgid "https://buycloud.id/wordpress/wp-featured-video/"
+msgid "https://buycloud.id/wordpress/featured-video/"
 msgstr ""
 
 #. Description of the plugin/theme

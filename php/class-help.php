@@ -23,7 +23,7 @@ class FVP_Help
 	public function post()
 	{
 		$screen = get_current_screen();
-		$title = esc_html__('WP Featured Video', 'wp-featured-video');
+		$title = esc_html__('Featured Video', 'featured-video');
 		$content = array();
 
 		// Tab Headline
@@ -33,7 +33,7 @@ class FVP_Help
 		$content[] = FVP_HTML::html('p', sprintf(
 			esc_html__(
 				'Take a video url from one of the %ssupported oembed providers%s and paste it into the Featured Video input field.',
-				'wp-featured-video'
+				'featured-video'
 			),
 			'<a href="https://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F" target="_blank" rel="noopener noreferrer">',
 			'</a>'
@@ -43,7 +43,7 @@ class FVP_Help
 		$content[] = FVP_HTML::html('p', sprintf(
 			esc_html__(
 				'Alternatively you can select one of the videos from your media library using the small media icon to the right in the URL input field. The plugin makes use of %sWordPress\' native HTML5 video functionality%s - no gurantee for compatibility with all formats.',
-				'wp-featured-video'
+				'featured-video'
 			),
 			'<a href="http://mediaelementjs.com/#browsers">',
 			'</a>'
@@ -53,7 +53,7 @@ class FVP_Help
 		$content[] = FVP_HTML::html(
 			'h4',
 			array('style' => 'margin-bottom: 0;'),
-			esc_html__('Fixing upload errors', 'wp-featured-video') . ':'
+			esc_html__('Fixing upload errors', 'featured-video') . ':'
 		);
 
 		$content[] = FVP_HTML::html(
@@ -62,7 +62,7 @@ class FVP_Help
 			sprintf(
 				esc_html__(
 					'Read %sthis%s on how to increase the maximum file upload size.',
-					'wp-featured-video'
+					'featured-video'
 				),
 				'<a href="https://goo.gl/yxov27" target="_blank" rel="noopener noreferrer">',
 				'</a>'
@@ -71,7 +71,7 @@ class FVP_Help
 
 		// Register tab.
 		$screen->add_help_tab(array(
-			'id'      => 'wp-featured-video',
+			'id'      => 'featured-video',
 			'title'   => $title,
 			'content' => implode('', $content),
 		));
@@ -85,9 +85,9 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 
-		$title = 'WP Featured Video: ' . esc_html__(
+		$title = 'Featured Video: ' . esc_html__(
 			'PHP-Functions',
-			'wp-featured-video'
+			'featured-video'
 		);
 
 		$content = array();
@@ -110,17 +110,17 @@ class FVP_Help
 			esc_html_x(
 				'All parameters are optional. If %1$s the current post\'s id will be used. %2$s is either a string %2$s or a 2-item array representing width and height in pixels, e.g. array(32,32).',
 				'%1$s is a boolean condition, \"post_id == null\", %2$s is a PHP variable, %2$s is a list of strings in paranthesis.',
-				'wp-featured-video'
+				'featured-video'
 			),
 			'<code>post_id == null</code>',
 			'<code>$size</code>',
-			'(<code>thumbnail</code>, <code>medium</code>, <code>large</code> ' . esc_html__('or', 'wp-featured-video') . ' <code>full</code>)'
+			'(<code>thumbnail</code>, <code>medium</code>, <code>large</code> ' . esc_html__('or', 'featured-video') . ' <code>full</code>)'
 		));
 
 		$content[] = FVP_HTML::html('p', sprintf(
 			esc_html__(
 				'The functions are implemented corresponding to the original %sfunctions%s: They are intended to be used and to act the same way. Take a look into the WordPress Codex for further guidance:',
-				'wp-featured-video'
+				'featured-video'
 			),
 			'<a href="https://codex.wordpress.org/Post_Thumbnails#Function_Reference" target="_blank" rel="noopener noreferrer">' . esc_html__('Featured Image') . '&nbsp;',
 			'</a>'
@@ -148,8 +148,8 @@ class FVP_Help
 	{
 		$screen = get_current_screen();
 		$title = esc_html__(
-			'WP Featured Video: Shortcode',
-			'wp-featured-video'
+			'Featured Video: Shortcode',
+			'featured-video'
 		);
 
 		$content = array();
@@ -158,17 +158,17 @@ class FVP_Help
 		$content[] = FVP_HTML::html('h3', $title);
 
 		$content[] = FVP_HTML::unordered_list(array(
-			'<code>[wp-featured-video]</code><br />' .
+			'<code>[featured-video]</code><br />' .
 				'<span>' .
-				esc_html__('Displays the video in its default size.', 'wp-featured-video') .
+				esc_html__('Displays the video in its default size.', 'featured-video') .
 				'</span>',
-			'<code>[wp-featured-video width=560]</code><br />' .
+			'<code>[featured-video width=560]</code><br />' .
 				'<span>' .
-				esc_html__('Displays the video with a width of 300 pixel. Height will be fitted such that the aspect ratio is preserved.', 'wp-featured-video') .
+				esc_html__('Displays the video with a width of 300 pixel. Height will be fitted such that the aspect ratio is preserved.', 'featured-video') .
 				'</span>',
-			'<code>[wp-featured-video width=560 height=315]</code><br />' .
+			'<code>[featured-video width=560 height=315]</code><br />' .
 				'<span>' .
-				esc_html__('Displays the video with a fixed width and height.', 'wp-featured-video') .
+				esc_html__('Displays the video with a fixed width and height.', 'featured-video') .
 				'</span>',
 		));
 

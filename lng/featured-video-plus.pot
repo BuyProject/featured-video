@@ -1,8 +1,8 @@
-# Copyright (C) 2015 WP Featured Video
-# This file is distributed under the same license as the WP Featured Video package.
+# Copyright (C) 2015 Featured Video
+# This file is distributed under the same license as the Featured Video package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Featured Video 2.1.0\n"
+"Project-Id-Version: Featured Video 2.1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/featured-video-"
 "plus\n"
 "POT-Creation-Date: 2015-06-11 16:28:03+00:00\n"
@@ -65,10 +65,10 @@ msgstr ""
 msgid "Auto set"
 msgstr ""
 
-#. #-#-#-#-#  wp-featured-video.pot (WP Featured Video 2.1.0)  #-#-#-#-#
+#. #-#-#-#-#  featured-video.pot (Featured Video 2.1.0)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: build/php/class-help.php:23 php/class-help.php:23
-msgid "WP Featured Video"
+msgid "Featured Video"
 msgstr ""
 
 #: build/php/class-help.php:31 php/class-help.php:31
@@ -124,7 +124,7 @@ msgid "Featured Image"
 msgstr ""
 
 #: build/php/class-help.php:143 php/class-help.php:143
-msgid "WP Featured Video: Shortcode"
+msgid "Featured Video: Shortcode"
 msgstr ""
 
 #: build/php/class-help.php:156 php/class-help.php:156
@@ -351,7 +351,7 @@ msgid ""
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "https://buycloud.id/wordpress/wp-featured-video/"
+msgid "https://buycloud.id/wordpress/featured-video/"
 msgstr ""
 
 #. Description of the plugin/theme

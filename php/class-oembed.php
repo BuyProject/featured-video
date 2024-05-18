@@ -8,7 +8,7 @@
  * @link http://oembed.com/ oEmbed Homepage
  * @link https://github.com/WordPress/WordPress/tree/master/wp-includes/class-wp-oembed.php
  *
- * @package WP Featured Video
+ * @package Featured Video
  * @subpackage oEmbed
  * @since 2.0.0
  */

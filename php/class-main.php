@@ -21,7 +21,7 @@ class Featured_Video_Plus
 
 		add_action('plugins_loaded', array($this, 'language'));
 
-		add_shortcode('wp-featured-video', array($this, 'shortcode'));
+		add_shortcode('featured-video', array($this, 'shortcode'));
 
 		// Mainly frontend stuff, but lives here because it also needs to be
 		// available on the backend because thats where AJAX requests are processed.
@@ -119,7 +119,7 @@ class Featured_Video_Plus
 		}
 
 		$classnames = array(
-			'wp-featured-video' => true,
+			'featured-video' => true,
 			'post-thumbnail' => true,
 			'fvp-responsive' => $responsive,
 		);
@@ -127,7 +127,7 @@ class Featured_Video_Plus
 		$classnames['fvp-' . $align] = !empty($align);
 
 		$embed = sprintf(
-			"<!-- WP Featured Video v%s -->\n<div%s>%s</div>\n\n",
+			"<!-- Featured Video v%s -->\n<div%s>%s</div>\n\n",
 			FVP_VERSION,
 			FVP_HTML::class_names($classnames, true, true),
 			$embed
@@ -261,7 +261,7 @@ class Featured_Video_Plus
 	public function language()
 	{
 		load_plugin_textdomain(
-			'wp-featured-video',
+			'featured-video',
 			FVP_DIR . 'lng/',
 			FVP_NAME . '/lng/'
 		);
